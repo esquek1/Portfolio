@@ -7,7 +7,6 @@ import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 
 import Sidenav from './components/Sidenav'
-
 import './App.css'
 
 
@@ -34,12 +33,10 @@ function App() {
 			<BrowserRouter>
 				<Sidenav/>
 					<Routes>  
-						<Route path="/" element={<Home />}>
-							<Route index element={<Home />} />
-							<Route index path="about" element={<About/>} />
-							<Route path="contact" element={<Contact />} />
-							<Route path="work" element={<Projects />} />
-						</Route>
+						<Route index element={<Home />} />
+						<Route index path="about" element={<About/>} />
+						<Route path="contact" element={<Contact />} />
+						<Route path="work" element={<Projects />} />
 					</Routes>
 			</BrowserRouter>
 		</div>

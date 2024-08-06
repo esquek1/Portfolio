@@ -14,6 +14,17 @@
   right: 0;
 }
 
+/*Changes layout of website by making side 
+navigation to a header when screen width is <=768px*/
+
+/*Tablet*/
+@media (max-width: 768px){
+  .whole-page {
+    padding: 25px;
+    margin: 20px;
+    flex-direction: column;
+  }
+}
 .row {
   display: flex;
   justify-content: space-around;

@@ -11,11 +11,6 @@
 }
 
 .social {
-	/* display: flex; Use flexbox for layout */
-	/* gap: 10px;  */
-	/* margin-top: 10px; */
-	/* width: 200px;   */
-	/* height: 200px; */
 	border: 1px solid;
 }
 
@@ -35,7 +30,7 @@
 .title {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 30px;
-	font-weight: 750;
+	font-weight: 500;
 
 	display: flex; 
 	justify-content: center; 
@@ -46,11 +41,49 @@
 	transform: rotate(180deg);
     color: #f2f2f2;
 }
+
+@media (max-width: 768px){
+    .sidebar {
+        /* position: fixed; */
+        margin: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .title {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+        transform: none; /* Ensure no rotation */
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .logo { 
+        width: 35px;
+        will-change: filter;
+        transition: filter 300ms;
+    }
+
+    .pages {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    } 
+}   
+
 .pages {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 } 
+
 .nav-list {
 	padding: 0;
 	margin: 0;
@@ -78,3 +111,5 @@
 .nav-item.extraBorder  {
 	border-bottom: 1px solid;
 }
+
+

@@ -11,7 +11,7 @@ function Sidenav() {
         <div className='title'>
            Kelly Esquejo Portfolio
         </div>
-        <div className=''>
+        <div className='social'>
             <a href="https://github.com/esquek1" target="_blank">
                 <img src={gitHubLogo} className="logo" alt="GitHub logo" />
             </a>
@@ -32,7 +32,7 @@ function Sidenav() {
                         <Link to="/contact">Contact</Link>
                     </li>
                     <li className="nav-item extraBorder">
-                        <Link to="/work">Projects</Link>
+                        <Link to="/projects">Projects</Link>
                     </li>
                 </ul>
                 
