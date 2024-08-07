@@ -4,6 +4,10 @@ import gitHubLogo from '/github-mark.svg'
 import "../css/sidenav.css"
 import { Link } from "react-router-dom";
 
+import { IoHome } from "react-icons/io5";
+import { RiContactsBook2Fill } from "react-icons/ri";
+import { RiFileInfoFill } from "react-icons/ri";
+import { MdWork } from "react-icons/md";
 
 function Sidenav() {
   return (
@@ -20,22 +24,33 @@ function Sidenav() {
             </a>
         </div>
         <div className='pages'>
-            <nav >
+            <nav>
                 <ul className='nav-list'>
                     <li className='nav-item'>
-                        <Link to="/">Home</Link>
+                        <Link to="/">
+                            <span className='text'>Home</span>
+                            <IoHome className='icon' />
+                        </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/about">About</Link>
+                        <Link to="/about">
+                            <span className='text'>About</span>
+                            <RiFileInfoFill className='icon' />
+                        </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact">
+                            <span className='text'>Contact</span>
+                            <RiContactsBook2Fill className='icon' />
+                        </Link>
                     </li>
-                    <li className="nav-item extraBorder">
-                        <Link to="/projects">Projects</Link>
+                    <li className="extraBorder">
+                        <Link to="/projects">
+                            <span className='text'>Projects</span>
+                            <MdWork className='icon' />
+                        </Link>
                     </li>
                 </ul>
-                
             </nav>
         </div>
         

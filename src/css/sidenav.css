@@ -42,6 +42,15 @@
     color: #f2f2f2;
 }
 
+/*Displays text and hides the icons*/
+.text {
+    display: inline;
+}
+
+.icon {
+    display: none;
+}
+  
 @media (max-width: 768px){
     .sidebar {
         /* position: fixed; */
@@ -62,7 +71,7 @@
 
     .social {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     
     .logo { 
@@ -76,6 +85,14 @@
         flex-direction: column;
         justify-content: flex-end;
     } 
+
+    .text {
+        display: none;
+    }
+    
+    .icon {
+        display: flex;
+    }
 }   
 
 .pages {
@@ -87,17 +104,15 @@
 .nav-list {
 	padding: 0;
 	margin: 0;
-	
     list-style-type: none; /* Add this line to remove bullet points */
 }
 
 .nav-item {
 	margin-bottom: 0;
-	/* border-bottom: 1px solid white; Single border around the links container */
-	border-top: 1px solid white;
+	border-top: 1px solid;
 }
 
-.nav-item a {
+.nav-item a, .extraBorder a {
 	color: white;
 	font-family: 'Courier New', Courier, monospace;
 }
@@ -108,8 +123,31 @@
 	filter:drop-shadow(0 0 5em #ede0c8);
 }
 
-.nav-item.extraBorder  {
+.extraBorder {
+    color: white;
+    border-top: 1px solid;
 	border-bottom: 1px solid;
 }
 
 
+@media (max-width: 768px){ 
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .nav-item {
+        /* border-top: 1px solid blue; */
+        text-align: center;
+        border: none;
+    }
+    .extraBorder  {
+        border-top: none;
+        border-bottom: none;
+        color: white;
+    }
+}
