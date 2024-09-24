@@ -1,15 +1,14 @@
 
 .projects-container {
-    /* position: relative; */
-    margin-left: 2em; /* Offset the images container to account for the sidebar width */
-    display: flex;
-    align-items: center;
-    overflow-y: auto;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 24px;
+    
+
 }
 
 .project-item {
-    display: inline-flex;
-    column-gap: 10px;
+    display: flex;
 }
 
 .project-item img {

@@ -4,7 +4,7 @@
   padding: 100px;
   display: flex;
   position: fixed;
-  margin: 25px;
+  margin: 24px;
   overflow-y: hidden;
   overflow-x:auto;
   
@@ -20,7 +20,7 @@ navigation to a header when screen width is <=768px*/
 /*Tablet*/
 @media (max-width: 768px){
   .whole-page {
-    padding: 25px;
+    padding: 24px;
     margin: 20px;
     flex-direction: column;
   }

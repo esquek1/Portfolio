@@ -4,7 +4,7 @@
 	border-color: #f2f2f2;
 	margin-right: 50px;
 	z-index: 1;
-	padding: 0.50em;
+	padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -15,9 +15,10 @@
 }
 
 .logo { 
-	width: 50px;
+	width: 52px;
 	will-change: filter;
 	transition: filter 300ms;
+    padding: 4px;
 }
 
 .logo:hover {
