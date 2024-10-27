@@ -5,16 +5,26 @@ function Projects() {
     <div className='projects-container'>
 		<h3>Projects </h3>
 		<div className='project-item'>
-			project 1
+			<h3 className='title'>Cypher Vault</h3>
+			<h5 className='project-skills'>C++, SQLite, AES Encryption</h5>
+			<p className='project-description'>
+				A terminal-based, multi-factor authentication password manager using C++ and SQLite. 
+				<br/>
+				Implemented AES encryption with OpenSSL to ensure data security.
+			</p>
 		</div>
 		<div className='project-item'>
-			project 2
+			<h3 className='title'>Photography Portfolio</h3>
+			<hp className="project-skills">React Js, JavaScript, HTML, CSS</hp>
+			
 		</div>
 		<div className='project-item'>
-			project 3
+			<h3 className='title'>Compiler for Espresso Language</h3>
+			<hp className="project-skills">Java</hp> 
 		</div>
 		<div className='project-item'>
-			project 4
+			<h3 className='title'>Catering Website</h3>
+			<hp className="project-skills">React Js, JavaScript, HTML, CSS</hp> 
 		</div>
 
     </div>
