@@ -1,0 +1,19 @@
+.whole-page {
+    display: flex; /* Arrange pages in a row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    height: 100vh; /* Full viewport height */
+    scroll-snap-type: none; /* Disable any snap type */
+    scroll-behavior: smooth; /* Optional: Smooth scrolling */
+}
+
+.page {
+    flex: 0 0 100%; /* Each page takes 100% of the viewport width */
+    height: 100%; /* Full viewport height */
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent vertical scrolling */
+}
