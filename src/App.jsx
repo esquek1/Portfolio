@@ -33,20 +33,36 @@ function App() {
     const ref = useRef();
 
     return (
-        <div className="whole-page" ref={ref}>
-            <div className="page" id="home">
-                <Home />
-            </div>
-            <div className="page" id="about">
-                <About />
-            </div>
-            <div className="page" id="projects">
-                <Projects />
-            </div>
-            <div className="page" id="contact">
-                <Contact />
+        <div className="app-container" ref={ref}>
+            <div className="app-content">
+                <div className="page" id="home">
+                    <Home />
+                </div>
+                <div className="page" id="about">
+                    <About />
+                </div>
+                <div className="page" id="projects">
+                    <Projects />
+                </div>
+                <div className="page" id="contact">
+                    <Contact />
+                </div>
             </div>
         </div>
+        // <div className="whole-page" ref={ref}>
+        // <div className="page" id="home">
+        //     <Home />
+        // </div>
+        // <div className="page" id="about">
+        //     <About />
+        // </div>
+        // <div className="page" id="projects">
+        //     <Projects />
+        // </div>
+        // <div className="page" id="contact">
+        //     <Contact />
+        // </div>
+        // </div>
     );
 }
 
