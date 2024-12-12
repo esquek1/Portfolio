@@ -30,16 +30,18 @@ function App() {
 
 	return (
 		<div className='whole-page'>
-			<BrowserRouter>
-				<Sidenav/>
-				
-				<Routes>  
-					<Route index element={<Home />} />
-					<Route index path="about" element={<About/>} />
-					<Route path="contact" element={<Contact />} />
-					<Route path="work" element={<Projects />} />
-				</Routes>
-			</BrowserRouter>
+				<BrowserRouter>
+					<Sidenav/>
+					<Routes>
+						<Route index element={<Home />} />
+						<Route path="about" element={<About />} />
+						<Route path="contact" element={<Contact />} />
+						<Route path="projects" element={<Projects />} />
+					</Routes>
+				</BrowserRouter>
+	
+			
+			
 		</div>
 	)
 }
