@@ -24,7 +24,6 @@ function Projects() {
 
     return (
         <div className="project-container">
-            <h3 className="project-banner">Projects </h3>
             <div className="project-content">
                 <div className="project-item">
                     <h3 className="project-title">Cypher Vault</h3>

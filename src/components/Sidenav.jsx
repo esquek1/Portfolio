@@ -12,7 +12,7 @@ import { MdWork } from "react-icons/md";
 function Sidenav() {
     return (
         <div className="sidebar">
-            <div className="title">Kelly Esquejo Portfolio</div>
+            <div className="title">Kelly Esquejo</div>
             <div className="social">
                 <a href="https://github.com/esquek1" target="_blank">
                     <img src={gitHubLogo} className="logo" alt="GitHub logo" />

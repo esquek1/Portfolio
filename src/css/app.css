@@ -1,15 +1,8 @@
-.whole-page {
-    display: flex; /* Arrange pages in a row */
-    overflow-y: hidden;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    height: 100vh; /* Full viewport height */
-    scroll-snap-type: none; /* Disable any snap type */
-    scroll-behavior: smooth; /* Optional: Smooth scrolling */
-}
 html,
 body {
     margin: 0; /* Remove default margins on body and html */
     padding: 0; /* Remove default padding */
+    box-sizing: border-box;
 }
 
 .app-container {
@@ -17,13 +10,16 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: calc(100dvw - 24px);
-    height: calc(100dvh - 24px);
-    margin: 12px; /* Maintain margin */
+    width: calc(100dvw - 32px);
+    height: calc(100dvh - 32px);
+    margin: 16px; /* Maintain margin */
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
     border: 1px solid; /* For debugging */
     overflow-y: hidden; /* Prevent vertical scroll */
     overflow-x: auto; /* Allow horizontal scroll */
+}
+
+.app-container::-webkit-scrollbar {
 }
 
 .app-content {
@@ -34,10 +30,14 @@ body {
     height: 100%;
     padding: 12px;
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
-
-    border: 1px solid blue;
 }
 
 .page {
-    width: 100vw;
+    min-width: 7;
+    flex-shrink: 0; /* Prevent shrinking to maintain width */
+    box-sizing: border-box; /* Ensure padding and borders don't affect dimensions */
+    border: 1px solid red; /* For debugging */
+}
+
+.sidenav {
 }

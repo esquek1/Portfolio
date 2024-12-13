@@ -35,46 +35,21 @@ function App() {
     return (
         <div className="app-container" ref={ref}>
             <div className="app-content">
-                <div className="page" id="home">
-                    <Home />
-                </div>
-                <div className="page" id="about">
-                    <About />
-                </div>
-                <div className="page" id="projects">
-                    <Projects />
-                </div>
-                <div className="page" id="contact">
-                    <Contact />
-                </div>
+                <BrowserRouter>
+                    <div className="sidenav">
+                        <Sidenav />
+                    </div>
+
+                    <Routes>
+                        <Route index element={<Home />} />
+                        <Route index path="about" element={<About />} />
+                        <Route path="projects" element={<Projects />} />
+                        <Route path="contact" element={<Contact />} />
+                    </Routes>
+                </BrowserRouter>
             </div>
         </div>
-        // <div className="whole-page" ref={ref}>
-        // <div className="page" id="home">
-        //     <Home />
-        // </div>
-        // <div className="page" id="about">
-        //     <About />
-        // </div>
-        // <div className="page" id="projects">
-        //     <Projects />
-        // </div>
-        // <div className="page" id="contact">
-        //     <Contact />
-        // </div>
-        // </div>
     );
 }
 
 export default App;
-
-/* <BrowserRouter>
-                <Sidenav />
-
-                <Routes>
-                    <Route index element={<Home />} />
-                    <Route index path="about" element={<About />} />
-                    <Route path="projects" element={<Projects />} />
-                    <Route path="contact" element={<Contact />} />
-                </Routes>
-            </BrowserRouter> */

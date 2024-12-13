@@ -6,12 +6,15 @@
     box-sizing: border-box;
     position: relative; */
 
-    border: 1px solid;
     box-sizing: border-box;
     width: 75%;
     height: 100%;
+
+    border: 1px solid darkcyan;
 }
 
 .home-content {
     max-height: 100%;
+
+    border: 1px solid darkgreen;
 }

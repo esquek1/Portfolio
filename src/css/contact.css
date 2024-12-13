@@ -1,12 +1,10 @@
 .contact-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 12px;
-    width: 100%;
-    height: 100%;
-    overflow-y: hidden;
-    border: 1px solid;
     box-sizing: border-box;
+    width: 75%;
+    height: 100%;
+    border: 1px solid darkcyan;
+}
+
+.contact-content {
+    max-height: 100%;
 }
