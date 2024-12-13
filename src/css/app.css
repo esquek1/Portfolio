@@ -20,6 +20,7 @@ body {
 }
 
 .app-container::-webkit-scrollbar {
+    display: none;
 }
 
 .app-content {
@@ -30,13 +31,6 @@ body {
     height: 100%;
     padding: 12px;
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
-}
-
-.page {
-    min-width: 7;
-    flex-shrink: 0; /* Prevent shrinking to maintain width */
-    box-sizing: border-box; /* Ensure padding and borders don't affect dimensions */
-    border: 1px solid red; /* For debugging */
 }
 
 .sidenav {

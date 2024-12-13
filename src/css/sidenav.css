@@ -1,13 +1,15 @@
 .sidebar {
-    position: relative;
-    border: 1px solid;
-    border-color: #f2f2f2;
-    margin-right: 50px;
-    z-index: 1;
-    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+
+    border: 1px solid #f2f2f2;
+    margin-right: 50px;
+    z-index: 1;
+    padding: 16px;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 .social {
