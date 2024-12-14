@@ -11,30 +11,31 @@ import { MdWork } from "react-icons/md";
 
 function Sidenav() {
     return (
-        <div className="sidebar">
+        <div className="sidebar-container">
             <div className="sidebar-content">
-                <div className="title">
+                <div className="title sidebar-item">
                     <p>Kelly Esquejo</p>
                 </div>
-                <div className="social">
-                    <a href="https://github.com/esquek1" target="_blank">
-                        <img
-                            src={gitHubLogo}
-                            className="logo"
-                            alt="GitHub logo"
-                        />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/kelly-esquejo/"
-                        target="_blank">
-                        <img
-                            src={linkedInLogo}
-                            className="logo linkedin"
-                            alt="LinkedIn logo"
-                        />
-                    </a>
-                </div>
-                <div className="pages">
+
+                <div className="pages sidebar-item">
+                    <div className="social sidebar-item">
+                        <a href="https://github.com/esquek1" target="_blank">
+                            <img
+                                src={gitHubLogo}
+                                className="logo"
+                                alt="GitHub logo"
+                            />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/kelly-esquejo/"
+                            target="_blank">
+                            <img
+                                src={linkedInLogo}
+                                className="logo linkedin"
+                                alt="LinkedIn logo"
+                            />
+                        </a>
+                    </div>
                     <nav>
                         <ul className="nav-list">
                             <li className="nav-item">
