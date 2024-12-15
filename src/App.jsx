@@ -39,13 +39,14 @@ function App() {
                     <div className="sidenav">
                         <Sidenav />
                     </div>
-
-                    <Routes>
-                        <Route index element={<Home />} />
-                        <Route path="about" element={<About />} />
-                        <Route path="projects" element={<Projects />} />
-                        <Route path="contact" element={<Contact />} />
-                    </Routes>
+                    <div className="app-pages">
+                        <Routes>
+                            <Route index element={<Home />} />
+                            <Route path="about" element={<About />} />
+                            <Route path="projects" element={<Projects />} />
+                            <Route path="contact" element={<Contact />} />
+                        </Routes>
+                    </div>
                 </BrowserRouter>
             </div>
         </div>

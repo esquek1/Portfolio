@@ -15,7 +15,6 @@ body {
     margin: 16px; /* Maintain margin */
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
     border: 1px solid; /* For debugging */
-    overflow-y: hidden; /* Prevent vertical scroll */
     overflow-x: auto; /* Allow horizontal scroll */
 }
 
@@ -31,6 +30,17 @@ body {
     height: 100%;
     padding: 12px;
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
+}
+
+.app-pages {
+    display: flex; /* Displays the pages horizontally */
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 32px;
+    margin-right: 32px;
+    box-sizing: border-box;
 }
 
 .sidenav {

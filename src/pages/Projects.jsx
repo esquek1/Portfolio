@@ -42,6 +42,54 @@ function Projects() {
                     </p>
                 </div>
                 <div className="project-item">
+                    <h3 className="project-title">Cypher Vault</h3>
+                    <div className="project-image">
+                        <img src={CypherVaultLogo} alt="" />
+                    </div>
+                    <h5 className="project-skills">
+                        C++, SQLite, AES Encryption
+                    </h5>
+                    <p className="project-description">
+                        A terminal-based, multi-factor authentication password
+                        manager using C++ and SQLite.
+                        <br />
+                        Implemented AES encryption with OpenSSL to ensure data
+                        security.
+                    </p>
+                </div>
+                <div className="project-item">
+                    <h3 className="project-title">Cypher Vault</h3>
+                    <div className="project-image">
+                        <img src={CypherVaultLogo} alt="" />
+                    </div>
+                    <h5 className="project-skills">
+                        C++, SQLite, AES Encryption
+                    </h5>
+                    <p className="project-description">
+                        A terminal-based, multi-factor authentication password
+                        manager using C++ and SQLite.
+                        <br />
+                        Implemented AES encryption with OpenSSL to ensure data
+                        security.
+                    </p>
+                </div>
+                <div className="project-item">
+                    <h3 className="project-title">Cypher Vault</h3>
+                    <div className="project-image">
+                        <img src={CypherVaultLogo} alt="" />
+                    </div>
+                    <h5 className="project-skills">
+                        C++, SQLite, AES Encryption
+                    </h5>
+                    <p className="project-description">
+                        A terminal-based, multi-factor authentication password
+                        manager using C++ and SQLite.
+                        <br />
+                        Implemented AES encryption with OpenSSL to ensure data
+                        security.
+                    </p>
+                </div>
+                <div className="project-item">
                     <h3 className="project-title">Graphic Design Portfolio</h3>
                     <h5 className="project-skills">
                         TypeScript, React, HTML, CSS

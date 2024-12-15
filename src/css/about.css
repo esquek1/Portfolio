@@ -1,4 +1,4 @@
-.home-container {
+.about-container {
     /* display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@
     border: 1px solid darkcyan;
 }
 
-.home-content {
+.about-content {
     max-height: 100%;
 
     border: 1px solid darkgreen;
