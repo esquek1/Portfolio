@@ -1,0 +1,16 @@
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: #61dafbaa;
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interference with mouse interactions */
+    box-shadow: 0 0 15px 5px #646cffaa; /* Glowing effect */
+    transform: translate(-50%, -50%); /* Center the cursor */
+    z-index: 9999; /* Ensure it stays on top of everything */
+    transition: transform 0.1s ease-out, opacity 0.2s;
+}
+
+body {
+    cursor: none; /* Hide the default cursor */
+}

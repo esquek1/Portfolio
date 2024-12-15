@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 
 import Sidenav from "./components/Sidenav";
 import "./css/app.css";
+import Cursor from "./components/Cursor"; // Import the custom cursor
 
 function App() {
     useEffect(() => {
@@ -33,7 +34,8 @@ function App() {
     const ref = useRef();
 
     return (
-        <div className="app-container" ref={ref}>
+        <div className="app-container cursor" ref={ref}>
+            <Cursor />
             <div className="app-content">
                 <BrowserRouter>
                     <div className="sidenav">
