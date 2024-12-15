@@ -1,16 +1,15 @@
 import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sidenav from "./components/Sidenav";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-
 import Projects from "./pages/Projects";
 
-import Sidenav from "./components/Sidenav";
+import Background from "./components/Background";
+import Cursor from "./components/Cursor";
 import "./css/app.css";
-import Cursor from "./components/Cursor"; // Import the custom cursor
-
 function App() {
     useEffect(() => {
         const handleWheel = (event) => {
@@ -35,6 +34,10 @@ function App() {
 
     return (
         <div className="app-container cursor" ref={ref}>
+            <div className="background">
+                <Background />
+            </div>
+
             <Cursor />
             <div className="app-content">
                 <BrowserRouter>

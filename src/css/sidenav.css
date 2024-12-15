@@ -1,5 +1,5 @@
 .sidebar-container {
-    border: 1px solid #f2f2f2;
+    border: 1px solid #ede0c8;
     z-index: 1;
     padding: 16px;
     box-sizing: border-box;
@@ -8,17 +8,10 @@
 
 .sidebar-content {
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-}
-
-.sidebar-item {
-}
-
-.social {
 }
 
 .logo {
@@ -47,7 +40,7 @@
     writing-mode: vertical-lr;
     text-orientation: sideways;
     transform: rotate(180deg);
-    color: #f2f2f2;
+    color: #ede0c8;
     border: none;
 }
 
@@ -104,12 +97,6 @@
     }
 }
 
-.pages {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
 .nav-list {
     padding: 0;
     margin: 0;
@@ -118,26 +105,25 @@
 
 .nav-item {
     margin-bottom: 2px;
-    border-top: 1px solid;
+    border-top: 1px solid #ede0c8;
 }
 
 .nav-item a,
 .extraBorder a {
-    text-decoration: none; /* Remove underline */
-    color: white;
+    color: #ede0c8;
     font-family: "Courier New", Courier, monospace;
+    text-decoration: none;
 }
 
 .nav-item a:hover {
-    /* color: #a8a39d; */
     color: #f2f2f2;
     filter: drop-shadow(0 0 5em #ede0c8);
 }
 
 .extraBorder {
-    color: white;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    color: #f2f2f2;
+    border-top: 1px solid #ede0c8;
+    border-bottom: 1px solid #ede0c8;
 }
 
 @media (max-width: 768px) {
@@ -151,13 +137,12 @@
     }
 
     .nav-item {
-        /* border-top: 1px solid blue; */
         text-align: center;
         border: none;
     }
     .extraBorder {
         border-top: none;
         border-bottom: none;
-        color: white;
+        color: #ede0c8;
     }
 }
