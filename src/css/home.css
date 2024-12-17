@@ -17,3 +17,27 @@
 
     border: 1px solid darkgreen;
 }
+
+.home-name {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+    font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ede0c8;
+    border: none;
+}
+
+.home-title {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+    font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ede0c8;
+    border: none;
+}

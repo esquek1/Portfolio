@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
-
+import Misc from "./pages/Misc";
 import Background from "./components/Background";
 import Cursor from "./components/Cursor";
 import "./css/app.css";
@@ -33,12 +33,12 @@ function App() {
     const ref = useRef();
 
     return (
-        <div className="app-container cursor" ref={ref}>
+        <div className="app-container" ref={ref}>
             <div className="background">
                 <Background />
             </div>
 
-            <Cursor />
+            {/* <Cursor /> */}
             <div className="app-content">
                 <BrowserRouter>
                     <div className="sidenav">
@@ -48,8 +48,9 @@ function App() {
                         <Routes>
                             <Route index element={<Home />} />
                             <Route path="about" element={<About />} />
-                            <Route path="projects" element={<Projects />} />
                             <Route path="contact" element={<Contact />} />
+                            <Route path="projects" element={<Projects />} />
+                            <Route path="misc" element={<Misc />} />
                         </Routes>
                     </div>
                 </BrowserRouter>

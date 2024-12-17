@@ -13,9 +13,9 @@ function Sidenav() {
     return (
         <div className="sidebar-container">
             <div className="sidebar-content">
-                <div className="title sidebar-item">
+                {/* <div className="title sidebar-item">
                     <p>Kelly Esquejo</p>
-                </div>
+                </div> */}
 
                 <div className="pages sidebar-item">
                     <div className="social sidebar-item">
@@ -56,9 +56,15 @@ function Sidenav() {
                                     <RiContactsBook2Fill className="icon" />
                                 </Link>
                             </li>
-                            <li className="extraBorder">
+                            <li className="nav-item">
                                 <Link to="/projects">
                                     <span className="text">Projects</span>
+                                    <MdWork className="icon" />
+                                </Link>
+                            </li>
+                            <li className="extraBorder">
+                                <Link to="/misc">
+                                    <span className="text">Misc</span>
                                     <MdWork className="icon" />
                                 </Link>
                             </li>
