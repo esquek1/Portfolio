@@ -12,7 +12,7 @@ body {
     position: relative; */
     width: calc(100dvw - 32px);
     height: calc(100dvh - 32px);
-    margin: 16px; /* Maintain margin */
+    margin: 16px; 
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
     border: 1px solid #ede0c8; /* For debugging */
     overflow-x: auto; /* Allow horizontal scroll */
