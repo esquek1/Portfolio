@@ -35,10 +35,8 @@ function Projects() {
                     </h5>
                     <p className="project-description">
                         A terminal-based, multi-factor authentication password
-                        manager using C++ and SQLite.
-                        <br />
-                        Implemented AES encryption with OpenSSL to ensure data
-                        security.
+                        manager using C++ and SQLite. Implemented AES encryption
+                        with OpenSSL to ensure data security.
                     </p>
                 </div>
                 <div className="project-item">
@@ -48,9 +46,8 @@ function Projects() {
                     </h5>
                     <p className="project-description">
                         Collaborated with Reena Castillo, a graphic designer, to
-                        bring their vision to life
-                        <br /> by developing a portfolio website that showcases
-                        their creative work.
+                        bring their vision to life by developing a portfolio
+                        website that showcases their creative work.
                     </p>
                 </div>
                 <div className="project-item">
@@ -60,11 +57,9 @@ function Projects() {
                     <h5 className="project-skills">Java</h5>
                     <p className="project-description">
                         Using Java, developed and integrated the scanner and
-                        parser, and semantic checker,
-                        <br />
-                        including name resolution, type checking, and modifier
-                        checking of a compiler for
-                        <br /> the Espresso Language.
+                        parser, and semantic checker, including name resolution,
+                        type checking, and modifier checking of a compiler for
+                        the Espresso Language.
                     </p>
                 </div>
                 <div className="project-item">
@@ -74,10 +69,9 @@ function Projects() {
                     </h5>
                     <p className="project-description">
                         A web application written in ReactJS and CSS aimed at
-                        simplifying the planning <br />
-                        process for trip recommendations. Project was showcased
-                        at the <br />
-                        Fred and Harriet Cox Senior Design Competition.
+                        simplifying the planning process for trip
+                        recommendations. Project was showcased at the Fred and
+                        Harriet Cox Senior Design Competition.
                     </p>
                 </div>
             </div>

@@ -12,10 +12,9 @@ body {
     position: relative; */
     width: calc(100dvw - 32px);
     height: calc(100dvh - 32px);
-    margin: 16px; 
+    margin: 16px;
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
     border: 1px solid #ede0c8; /* For debugging */
-    overflow-x: auto; /* Allow horizontal scroll */
 }
 
 .app-container::-webkit-scrollbar {
@@ -32,6 +31,32 @@ body {
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
 }
 
+.overlay-container {
+    position: relative; /* Parent for positioning children */
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-container > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-container .terminal {
+    z-index: 2; /* Place Terminal on top */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    color: white; /* Terminal text color */
+    opacity: 1; /* Adjust overall opacity */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect */
+    pointer-events: auto; /* Allow interaction */
+}
+
+.overlay-container .projects {
+    z-index: 1;
+}
 .app-pages {
     display: flex; /* Displays the pages horizontally */
     flex-direction: row;

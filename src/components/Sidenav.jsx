@@ -13,12 +13,8 @@ function Sidenav() {
     return (
         <div className="sidebar-container">
             <div className="sidebar-content">
-                {/* <div className="title sidebar-item">
-                    <p>Kelly Esquejo</p>
-                </div> */}
-
                 <div className="pages sidebar-item">
-                    <div className="social sidebar-item">
+                    {/* <div className="social sidebar-item">
                         <a href="https://github.com/esquek1" target="_blank">
                             <img
                                 src={gitHubLogo}
@@ -35,7 +31,7 @@ function Sidenav() {
                                 alt="LinkedIn logo"
                             />
                         </a>
-                    </div>
+                    </div> */}
                     <nav>
                         <ul className="nav-list">
                             <li className="nav-item">

@@ -1,0 +1,104 @@
+.terminal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /*Terminal will display on top of Projects page */
+}
+
+.terminal-content {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    background-color: #1e1e1e; /* VS Code dark background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Consolas", "Courier New", monospace;
+    color: #cccccc;
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smooth transition for resizing */
+}
+
+/* Terminal should take entire div when maximize */
+.terminal-content.large {
+    width: 100%;
+    height: 100%;
+}
+
+/* Minimized terminal */
+.terminal-content.minimized {
+    width: 20%;
+    height: 3.5%;
+}
+.terminal-header {
+    background-color: #333333;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red {
+    background-color: #ff5f56;
+}
+
+.red:hover {
+    background-color: red; /* Lighter red on hover */
+}
+
+.yellow {
+    background-color: #ffbd2e;
+}
+
+.yellow:hover {
+    background-color: #fff600; /* Lighter red on hover */
+}
+
+.green {
+    background-color: #27c93f;
+}
+
+.green:hover {
+    background-color: lime; /* Lighter red on hover */
+}
+
+.terminal-body {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+}
+
+.terminal-line {
+    margin-bottom: 4px;
+}
+
+.prompt {
+    color: #4ec9b0; /* Cyan-like prompt */
+}
+
+.command {
+    color: #9cdcfe; /* Blue command text */
+}
+
+.output {
+    color: #ffffff; /* Standard white output */
+}
