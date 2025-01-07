@@ -6,20 +6,21 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
-
+import Projects from "../pages/Projects";
 function Terminal() {
     const [isMinimized, setIsMinimized] = useState(false); // Use the prop to set initial state
     const [isMaximized, setIsMaximized] = useState(false);
     const [isWindowClosed, setIsWindowClosed] = useState(false);
-    const navigate = useNavigate(); // useNavigate hook for navigation
+    // const navigate = useNavigate(); // useNavigate hook for navigation
 
-    const handleProjectPageClick = (event) => {
-        event.preventDefault(); // Prevent default link behavior
-        setIsMinimized(true); // Minimize the terminal
+    // const handleProjectPageClick = (event) => {
+    //     event.preventDefault(); // Prevent default link behavior
+    //     setIsMinimized(true); // Minimize the terminal
 
-        // Navigate after state update
-        navigate("/projects");
-    };
+    //     // Navigate after state update
+    //     navigate("/projects");
+    // };
+
     // Close terminal when red button is clicked
     const handleRedButtonClick = () => {
         setIsWindowClosed(true); // Set window closed state
@@ -87,7 +88,8 @@ function Terminal() {
                             <li className="nav-item">
                                 <Link
                                     to="/projects"
-                                    onClick={handleProjectPageClick}>
+                                    // onClick={handleProjectPageClick}
+                                >
                                     <span className="text">Projects</span>
                                 </Link>
                             </li>
@@ -98,6 +100,7 @@ function Terminal() {
                             <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/contact" element={<Contact />} />
+                            <Route path="/projects" element={<Projects />} />
                         </Routes>
                     </div>
                 </div>

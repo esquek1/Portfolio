@@ -4,7 +4,7 @@ function About() {
     return (
         <div className="about-container">
             <div className="about-content">
-                <div className="about-headline">Kelly Esquejo</div>
+                {/* <div className="about-headline">Kelly Esquejo</div> */}
                 <div className="about-description">
                     Hello! My name is Kelly. I am a Junior Software Engineer.
                 </div>

@@ -9,12 +9,13 @@ import Projects from "./pages/Projects";
 import Terminal from "./pages/Terminal";
 import Background from "./components/Background";
 import Cursor from "./components/Cursor";
-
+import CarBackground from "./assets/cars/car0.jpg";
 import "./css/app.css";
+
 function App() {
     return (
         <div className="app-container">
-            <div className="background">
+            <div className="background car">
                 <Background />
             </div>
 
@@ -24,9 +25,6 @@ function App() {
             <div className="app-content">
                 <div className="overlay-container">
                     <Terminal />
-                    <Routes>
-                        <Route path="/projects" element={<Projects />} />
-                    </Routes>
                 </div>
             </div>
         </div>

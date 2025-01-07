@@ -26,7 +26,10 @@ function Projects() {
         <div className="project-container">
             <div className="project-content">
                 <div className="project-item">
-                    <h3 className="project-title">Cypher Vault</h3>
+                    <a href="https://github.com/esquek1/CypherVault">
+                        <h3 className="project-title">Cypher Vault</h3>
+                    </a>
+
                     <div className="project-image">
                         <img src={CypherVaultLogo} alt="" />
                     </div>
