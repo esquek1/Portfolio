@@ -8,6 +8,24 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Projects from "../pages/Projects";
 function Terminal() {
+    const getAsciiArt = () => {
+        return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+▐                                                             ▌
+▐  __  __   ______  __      __      __  __                    ▌
+▐ /\\ \\/ /  /\\  ___\\/\\ \\    /\\ \\    /\\ \\_\\ \\                   ▌
+▐ \\ \\  _"-.\\ \\  __ \\ \\ \\___\\ \\ \\___\\ \\____ \\                  ▌
+▐  \\ \\_\\ \\_\\\\ \\_____\\ \\_____\\ \\_____\\/\\_____\\                 ▌
+▐  ______/___________________\\/_____________/  __  ______     ▌
+▐ /\\  ___\\/\\  ___\\/\\  __ \\/\\ \\/\\ \\/\\  ___\\    /\\ \\/\\  __ \\    ▌
+▐ \\ \\  __\\  \\___  \\ \\ \\/\\_\\ \\ \\_\\ \\ \\  __\\   _\\_\\ \\ \\ \\/\\ \\   ▌
+▐  \\ \\_____\\/\\_____\\ \\___\\_\\ \\_____\\ \\_____\\/\\_____\\ \\_____\\  ▌
+▐   \\/_____/\\/_____/\\/___/_/\\/_____/\\/_____/\\/_____/\\/_____/  ▌
+▐                                                             ▌
+▐                                                             ▌
+▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌`;
+    };
+    const asciiArt = getAsciiArt();
+
     const [isMinimized, setIsMinimized] = useState(false); // Use the prop to set initial state
     const [isMaximized, setIsMaximized] = useState(false);
     const [isWindowClosed, setIsWindowClosed] = useState(false);
@@ -62,6 +80,7 @@ function Terminal() {
                     <span className="terminal-title">Terminal</span>
                 </div>
                 <div className="terminal-body">
+                    <pre>{asciiArt}</pre>
                     <div className="terminal-line">
                         <span className="prompt">
                             C:\Users\KellyEsquejo&gt;
@@ -97,7 +116,6 @@ function Terminal() {
                     </nav>
                     <div className="terminal-content-inner">
                         <Routes>
-                            <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/projects" element={<Projects />} />
