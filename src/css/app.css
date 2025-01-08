@@ -22,7 +22,7 @@ body {
     height: calc(100dvh - 32px);
     margin: 16px;
     box-sizing: border-box; /* Ensure borders and padding don't increase size */
-    border: 1px solid #ede0c8; /* For debugging */
+    /* border: 1px solid #ede0c8; For debugging */
 }
 
 .app-container::-webkit-scrollbar {

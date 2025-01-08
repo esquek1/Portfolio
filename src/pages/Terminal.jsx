@@ -40,24 +40,32 @@ function Terminal() {
     // };
 
     // Close terminal when red button is clicked
-    const handleRedButtonClick = () => {
-        setIsWindowClosed(true); // Set window closed state
-    };
+    // const handleRedButtonClick = () => {
+    //     setIsWindowClosed(true); // Set window closed state
+    // };
 
-    // Toggle minimization when yellow button is clicked
-    const handleYellowButtonClick = () => {
-        setIsMinimized(!isMinimized);
-    };
+    // // Toggle minimization when yellow button is clicked
+    // const handleYellowButtonClick = () => {
+    //     setIsMinimized(!isMinimized);
+    // };
 
-    // Toggle maximization when green button is clicked
-    const handleGreenButtonClick = () => {
-        setIsMaximized(!isMaximized);
-    };
+    // // Toggle maximization when green button is clicked
+    // const handleGreenButtonClick = () => {
+    //     setIsMaximized(!isMaximized);
+    // };
 
     // If the terminal is closed, return null to stop rendering it
     if (isWindowClosed) {
         return null;
     }
+    // const containerRef = useRef(null);
+
+    const [inputVal, setInputVal] = useState("");
+
+    // Get the terminal input value
+    // const inputElement = document.getElementById("terminal-input").value;
+    const inputRef = useRef(null);
+    // When window is active/clicked on, focus on the input text
 
     return (
         <div className="terminal-container">
@@ -65,29 +73,70 @@ function Terminal() {
                 className={`terminal-content ${isMaximized ? "large" : ""} ${
                     isMinimized ? "minimized" : ""
                 }`}>
-                <div className="terminal-header">
-                    <div className="terminal-buttons">
-                        <div
-                            className="button red"
-                            onClick={handleRedButtonClick}></div>
-                        <div
-                            className="button yellow"
-                            onClick={handleYellowButtonClick}></div>
-                        <div
-                            className="button green"
-                            onClick={handleGreenButtonClick}></div>
-                    </div>
-                    <span className="terminal-title">Terminal</span>
-                </div>
                 <div className="terminal-body">
                     <pre>{asciiArt}</pre>
                     <div className="terminal-line">
                         <span className="prompt">
                             C:\Users\KellyEsquejo&gt;
                         </span>
-                        <span className="output choices">Choices:</span>
+                        <span className="terminal-output choices">
+                            Choices:
+                        </span>
                     </div>
-                    <nav>
+                    <div className="terminal-line">
+                        <span className="prompt">
+                            C:\Users\KellyEsquejo&gt;
+                        </span>
+                        <input
+                            autoFocus
+                            type="text"
+                            className="terminal-input"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Terminal;
+{
+    /* <span className="command">~/Portfolio $</span> */
+}
+{
+    /* <div className="terminal-header">
+    <div className="terminal-buttons">
+        <div
+            className="button red"
+            onClick={handleRedButtonClick}></div>
+        <div
+            className="button yellow"
+            onClick={handleYellowButtonClick}></div>
+        <div
+            className="button green"
+            onClick={handleGreenButtonClick}></div>
+    </div>
+    <span className="terminal-title">Terminal</span>
+</div> */
+}
+{
+    /* <div className="terminal-body">
+                    <div className="terminal-line">
+                        <span className="prompt">
+                            C:\Users\KellyEsquejo&gt;
+                        </span>
+
+                        <span className="output"> Hello, I'm Kelly</span>
+                    </div>
+                    <div className="terminal-line">
+                        <span className="output">
+                            I am a Software Developer
+                        </span>
+                    </div>
+                </div> */
+}
+{
+    /* <nav>
                         <ul className="nav-list">
                             <li className="nav-item">
                                 <Link to="/">
@@ -113,37 +162,14 @@ function Terminal() {
                                 </Link>
                             </li>
                         </ul>
-                    </nav>
-                    <div className="terminal-content-inner">
+                    </nav> */
+}
+{
+    /* <div className="terminal-content-inner">
                         <Routes>
                             <Route path="/about" element={<About />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/projects" element={<Projects />} />
                         </Routes>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-export default Terminal;
-{
-    /* <span className="command">~/Portfolio $</span> */
-}
-{
-    /* <div className="terminal-body">
-                    <div className="terminal-line">
-                        <span className="prompt">
-                            C:\Users\KellyEsquejo&gt;
-                        </span>
-
-                        <span className="output"> Hello, I'm Kelly</span>
-                    </div>
-                    <div className="terminal-line">
-                        <span className="output">
-                            I am a Software Developer
-                        </span>
-                    </div>
-                </div> */
+                    </div> */
 }
