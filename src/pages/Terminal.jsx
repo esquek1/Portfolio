@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLocation } from "react";
+import React, { useRef, useState, useEffect, useLocation } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 import "../css/Terminal.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -65,6 +65,7 @@ function Terminal() {
     // Get the terminal input value
     // const inputElement = document.getElementById("terminal-input").value;
     const inputRef = useRef(null);
+
     // When window is active/clicked on, focus on the input text
 
     return (
