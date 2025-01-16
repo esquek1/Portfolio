@@ -28,6 +28,25 @@ function Terminal() {
 
     const [inputVal, setInputVal] = useState("");
 
+    // Handles every change typed or deleted in the input field
+    // Ensurse inputVal state is in sync with the input value
+    // best practices for form handling
+    // makes the component controlled
+
+    const handleInputChange = (event) => {
+        setInputVal(event.target.value);
+        console.log(inputVal);
+    };
+
+    // Handle when user presses Enter in the text input field
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            // Perform actions when the Enter key is pressed
+            console.log("User pressed Enter:", inputVal);
+            setInputVal(""); // Clear the input field if needed
+        }
+    };
+
     // Get the terminal input value
     const inputRef = useRef(null);
     const containerRef = useRef(null);
@@ -36,6 +55,7 @@ function Terminal() {
     const handleDivClick = () => {
         inputRef.current && inputRef.current.focus();
     };
+
     useEffect(() => {
         document.addEventListener("click", handleDivClick);
         return () => {
@@ -55,6 +75,9 @@ function Terminal() {
                     <span className="prompt">C:\Users\KellyEsquejo&gt;</span>
                     <input
                         ref={inputRef}
+                        value={inputVal}
+                        onChange={handleInputChange}
+                        onKeyDown={handleKeyDown}
                         autoFocus
                         type="text"
                         className="terminal-input"
