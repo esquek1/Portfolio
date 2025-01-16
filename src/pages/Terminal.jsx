@@ -26,74 +26,39 @@ function Terminal() {
     };
     const asciiArt = getAsciiArt();
 
-    const [isMinimized, setIsMinimized] = useState(false); // Use the prop to set initial state
-    const [isMaximized, setIsMaximized] = useState(false);
-    const [isWindowClosed, setIsWindowClosed] = useState(false);
-    // const navigate = useNavigate(); // useNavigate hook for navigation
-
-    // const handleProjectPageClick = (event) => {
-    //     event.preventDefault(); // Prevent default link behavior
-    //     setIsMinimized(true); // Minimize the terminal
-
-    //     // Navigate after state update
-    //     navigate("/projects");
-    // };
-
-    // Close terminal when red button is clicked
-    // const handleRedButtonClick = () => {
-    //     setIsWindowClosed(true); // Set window closed state
-    // };
-
-    // // Toggle minimization when yellow button is clicked
-    // const handleYellowButtonClick = () => {
-    //     setIsMinimized(!isMinimized);
-    // };
-
-    // // Toggle maximization when green button is clicked
-    // const handleGreenButtonClick = () => {
-    //     setIsMaximized(!isMaximized);
-    // };
-
-    // If the terminal is closed, return null to stop rendering it
-    if (isWindowClosed) {
-        return null;
-    }
-    // const containerRef = useRef(null);
-
     const [inputVal, setInputVal] = useState("");
 
     // Get the terminal input value
-    // const inputElement = document.getElementById("terminal-input").value;
     const inputRef = useRef(null);
+    const containerRef = useRef(null);
 
     // When window is active/clicked on, focus on the input text
+    const handleDivClick = () => {
+        inputRef.current && inputRef.current.focus();
+    };
+    useEffect(() => {
+        document.addEventListener("click", handleDivClick);
+        return () => {
+            document.removeEventListener("click", handleDivClick);
+        };
+    }, [containerRef]);
 
     return (
         <div className="terminal-container">
-            <div
-                className={`terminal-content ${isMaximized ? "large" : ""} ${
-                    isMinimized ? "minimized" : ""
-                }`}>
-                <div className="terminal-body">
-                    <pre>{asciiArt}</pre>
-                    <div className="terminal-line">
-                        <span className="prompt">
-                            C:\Users\KellyEsquejo&gt;
-                        </span>
-                        <span className="terminal-output choices">
-                            Choices:
-                        </span>
-                    </div>
-                    <div className="terminal-line">
-                        <span className="prompt">
-                            C:\Users\KellyEsquejo&gt;
-                        </span>
-                        <input
-                            autoFocus
-                            type="text"
-                            className="terminal-input"
-                        />
-                    </div>
+            <div className="terminal-content" ref={containerRef}>
+                <pre>{asciiArt}</pre>
+                <div className="terminal-line">
+                    <span className="prompt">C:\Users\KellyEsquejo&gt;</span>
+                    <span className="terminal-output choices">Choices:</span>
+                </div>
+                <div className="terminal-line">
+                    <span className="prompt">C:\Users\KellyEsquejo&gt;</span>
+                    <input
+                        ref={inputRef}
+                        autoFocus
+                        type="text"
+                        className="terminal-input"
+                    />
                 </div>
             </div>
         </div>

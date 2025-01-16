@@ -15,17 +15,10 @@ import "./css/app.css";
 function App() {
     return (
         <div className="app-container">
-            <div className="background car">
-                <Background />
-            </div>
-
-            {/* Home, About, and Contact will render inside the terminal window.
-            While Projects will render like a normal page and will minimized the terminal. */}
+            <Background />
 
             <div className="app-content">
-                <div className="overlay-container">
-                    <Terminal />
-                </div>
+                <Terminal />
             </div>
         </div>
     );
