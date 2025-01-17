@@ -1,12 +1,13 @@
 import React, { useRef, useState, useEffect, useLocation } from "react";
-import PropTypes from "prop-types"; // Import PropTypes
 import "../css/Terminal.css";
-import { Link, useNavigate } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import Projects from "../pages/Projects";
+
+const COMMANDS = [
+    { cmd: "-about", desc: "About Me" },
+    { cmd: "-clear", desc: "Clear terminal" },
+    { cmd: "-contact", desc: "Display contact information" },
+    { cmd: "-help", desc: "Show available commands" },
+    { cmd: "-projects", desc: "Show projects I have worked on" },
+];
 function Terminal() {
     const getAsciiArt = () => {
         return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
@@ -38,12 +39,43 @@ function Terminal() {
         console.log(inputVal);
     };
 
+    const [terminalOutput, setTerminalOutput] = useState([]);
+
     // Handle when user presses Enter in the text input field
     const handleKeyDown = (event) => {
         if (event.key === "Enter") {
-            // Perform actions when the Enter key is pressed
-            console.log("User pressed Enter:", inputVal);
-            setInputVal(""); // Clear the input field if needed
+            // Verify if the input matches any of the possible commands
+            const inputCmd = inputVal.trim();
+            const command = COMMANDS.find((cmd) => cmd.cmd === inputCmd);
+
+            if (inputCmd === "-help") {
+                // Show all commands and descriptions for -help
+                const helpText = COMMANDS.map(
+                    (cmd) => `${cmd.cmd}          ${cmd.desc}`
+                ).join("\n");
+
+                setTerminalOutput((prevOutput) => [
+                    ...prevOutput,
+                    `> ${inputCmd}`,
+                    helpText,
+                ]);
+            } else if (command) {
+                // Show the description for the matched command
+                setTerminalOutput((prevOutput) => [
+                    ...prevOutput,
+                    `> ${inputCmd}`,
+                    command.desc,
+                ]);
+            } else {
+                // Show unknown command message
+                setTerminalOutput((prevOutput) => [
+                    ...prevOutput,
+                    `${inputCmd}`,
+                    `Unknown command: ${inputCmd}`,
+                ]);
+            }
+
+            setInputVal(""); // Clear input field
         }
     };
 
@@ -67,10 +99,18 @@ function Terminal() {
         <div className="terminal-container">
             <div className="terminal-content" ref={containerRef}>
                 <pre>{asciiArt}</pre>
-                <div className="terminal-line">
-                    <span className="prompt">C:\Users\KellyEsquejo&gt;</span>
-                    <span className="terminal-output choices">Choices:</span>
-                </div>
+
+                {/* Dynamically render  */}
+                {terminalOutput.map((line, index) => (
+                    <div key={index} className="terminal-line">
+                        <span className="prompt">
+                            C:\Users\KellyEsquejo&gt;
+                        </span>
+                        <span className="terminal-output">{line}</span>
+                    </div>
+                ))}
+
+                {/* User input */}
                 <div className="terminal-line">
                     <span className="prompt">C:\Users\KellyEsquejo&gt;</span>
                     <input
@@ -89,76 +129,3 @@ function Terminal() {
 }
 
 export default Terminal;
-{
-    /* <span className="command">~/Portfolio $</span> */
-}
-{
-    /* <div className="terminal-header">
-    <div className="terminal-buttons">
-        <div
-            className="button red"
-            onClick={handleRedButtonClick}></div>
-        <div
-            className="button yellow"
-            onClick={handleYellowButtonClick}></div>
-        <div
-            className="button green"
-            onClick={handleGreenButtonClick}></div>
-    </div>
-    <span className="terminal-title">Terminal</span>
-</div> */
-}
-{
-    /* <div className="terminal-body">
-                    <div className="terminal-line">
-                        <span className="prompt">
-                            C:\Users\KellyEsquejo&gt;
-                        </span>
-
-                        <span className="output"> Hello, I'm Kelly</span>
-                    </div>
-                    <div className="terminal-line">
-                        <span className="output">
-                            I am a Software Developer
-                        </span>
-                    </div>
-                </div> */
-}
-{
-    /* <nav>
-                        <ul className="nav-list">
-                            <li className="nav-item">
-                                <Link to="/">
-                                    <span className="text">Home</span>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/about">
-                                    <span className="text">About</span>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/contact">
-                                    <span className="text">Contact</span>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    to="/projects"
-                                    // onClick={handleProjectPageClick}
-                                >
-                                    <span className="text">Projects</span>
-                                </Link>
-                            </li>
-                        </ul>
-                    </nav> */
-}
-{
-    /* <div className="terminal-content-inner">
-                        <Routes>
-                            <Route path="/about" element={<About />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route path="/projects" element={<Projects />} />
-                        </Routes>
-                    </div> */
-}
