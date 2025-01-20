@@ -14,16 +14,19 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: #1e1e1e; /* VS Code dark background */
+    /* VS Code dark background */
+    background-color: #1e1e1e;
+    background-color: #343a4a;
     border-radius: 8px;
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: "Consolas", "Courier New", monospace;
-    color: #cccccc;
+    color: #f1c789;
     overflow: hidden;
     flex: 1;
     padding: 12px;
     overflow-y: auto;
+    font-size: 16px;
 }
 
 .terminal-line {
@@ -31,16 +34,16 @@
 }
 
 .prompt {
-    color: #4ec9b0; /* Cyan-like prompt */
+    color: #28afbb;
 }
 
 .command {
-    color: #9cdcfe; /* Blue command text */
+    color: #f1ebc3;
 }
 
 .terminal-input {
     font-family: "Consolas", "Courier New", monospace;
-    color: #9cdcfe;
+    color: #f1ebc3;
     background-color: #1e1e1e;
     cursor: default;
     border: none;
@@ -56,4 +59,8 @@
 
 .terminal-output {
     color: #ffffff; /* Standard white output */
+}
+
+.ascii-art {
+    color: #cf5353;
 }

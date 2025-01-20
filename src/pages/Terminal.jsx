@@ -22,7 +22,7 @@ const COMMANDS = [
 ];
 
 const HELLO = ["Greetings!", "World!", "Hi!", "Hey!", "ヾ(•＾▽＾•)"];
-
+const JOKES = ["!false (It’s funny because it’s true.)"];
 const getAsciiArt = () => {
     return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 ▐                                                             ▌
@@ -44,11 +44,12 @@ function Terminal() {
     const asciiArt = getAsciiArt();
 
     const [inputVal, setInputVal] = useState("");
-    // State variables to store terminal output and the active component
-    const [terminalHistory, setTerminalHistory] = useState([]); // Store command history
     const inputRef = useRef(null);
-    const terminalEndRef = useRef(null);
-    const [capsLock, setCapsLock] = useState(false); // State for Caps Lock
+
+    // Array for previously entered commands including command name, description, and component
+    const [terminalHistory, setTerminalHistory] = useState([]);
+    // State for Caps Lock
+    const [capsLock, setCapsLock] = useState(false);
 
     // Handles every change typed or deleted in the input field
     // Ensure inputVal state is in sync with the input value
@@ -69,21 +70,24 @@ function Terminal() {
         let component = null;
 
         switch (inputCmd) {
-            case "-help":
-                output = generateHelpOutput();
-                break;
-
             case "-clear":
                 clearTerminal();
                 return; // Do not append "-clear" to the history
 
+            case "-help":
+                output = generateHelpOutput();
+                break;
+
             default: {
                 // To avoid the following error: "Unexpected lexical declaration in case block"
+                // placed {} brackets
                 const command = COMMANDS.find((cmd) => cmd.cmd === inputCmd);
                 if (command) {
-                    output = command.desc; // Default to the description
+                    output = command.desc;
+
+                    // If there is a component for the command, it will be added to the terminalHistory
                     if (command.component) {
-                        component = command.component; // Include component if present
+                        component = command.component; // Render the corresponding component if available
                     }
                 } else {
                     output = `Unknown command: ${inputCmd}`;
@@ -101,14 +105,23 @@ function Terminal() {
 
     // Generates the output for the "-help" command
     const generateHelpOutput = () => {
-        return COMMANDS.map((cmd) => `${cmd.cmd.padEnd(15)} ${cmd.desc}`).join(
-            "\n"
-        );
+        const secretMessage =
+            "Hint: There are two secret commands! Can you guess it?";
+        const commandsList = COMMANDS.map(
+            (cmd) => `${cmd.cmd?.padEnd(15) || ""} ${cmd.desc}`
+        ).join("\n");
+        return `${commandsList}\n\n${secretMessage}`;
     };
 
     const generateHelloOutput = () => {
         // Pick a random response from the HELLO array
         const randomResponse = HELLO[Math.floor(Math.random() * HELLO.length)];
+        return randomResponse;
+    };
+
+    const generateJokeOutput = () => {
+        // Pick a random response from the JOKE array
+        const randomResponse = JOKES[Math.floor(Math.random() * HELLO.length)];
         return randomResponse;
     };
 
@@ -127,8 +140,8 @@ function Terminal() {
         }
 
         if (event.key === "Enter") {
-            const inputCmd = inputVal.trim(); // Trim spaces
-            processCommand(inputCmd); // Process the command
+            const inputCmd = inputVal.trim(); // Trim white spaces
+            processCommand(inputCmd);
             setInputVal(""); // Clear input field
         }
     };
@@ -147,6 +160,7 @@ function Terminal() {
             document.removeEventListener("click", handleDivClick);
         };
     }, []);
+
     useEffect(() => {
         scrollToBottom();
     }, [terminalHistory]);
@@ -154,12 +168,15 @@ function Terminal() {
     return (
         <div className="terminal-container">
             <div className="terminal-content">
-                <pre>{asciiArt}</pre>
-                {/* Render terminal history */}
+                <pre className="ascii-art">{asciiArt}</pre>
+
+                {/* Iterate through the terminal history array and render the objects */}
                 {terminalHistory.map((entry, index) => (
                     <div key={index} className="terminal-line">
                         <span className="prompt">C:\Users\KEsquejo&gt;</span>
-                        <span className="terminal-output">{entry.command}</span>
+                        <span className="terminal-command">
+                            {entry.command}
+                        </span>
                         <pre>{entry.output}</pre>
 
                         {/* Render the component if present */}
@@ -170,6 +187,7 @@ function Terminal() {
                         )}
                     </div>
                 ))}
+
                 {/* User input */}
                 <div className="terminal-line">
                     <span className="prompt">C:\Users\KEsquejo&gt;</span>
