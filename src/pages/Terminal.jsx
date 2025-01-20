@@ -47,6 +47,7 @@ function Terminal() {
     // State variables to store terminal output and the active component
     const [terminalHistory, setTerminalHistory] = useState([]); // Store command history
     const inputRef = useRef(null);
+    const terminalEndRef = useRef(null);
     const [capsLock, setCapsLock] = useState(false); // State for Caps Lock
 
     // Handles every change typed or deleted in the input field
@@ -55,6 +56,11 @@ function Terminal() {
     // makes the component controlled
     const handleInputChange = (event) => {
         setInputVal(event.target.value);
+    };
+
+    // Scrolls to the input text after command has been process
+    const scrollToBottom = () => {
+        inputRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     // When user presses 'Enter', verify input
@@ -141,12 +147,14 @@ function Terminal() {
             document.removeEventListener("click", handleDivClick);
         };
     }, []);
+    useEffect(() => {
+        scrollToBottom();
+    }, [terminalHistory]);
 
     return (
         <div className="terminal-container">
             <div className="terminal-content">
                 <pre>{asciiArt}</pre>
-
                 {/* Render terminal history */}
                 {terminalHistory.map((entry, index) => (
                     <div key={index} className="terminal-line">
@@ -162,7 +170,6 @@ function Terminal() {
                         )}
                     </div>
                 ))}
-
                 {/* User input */}
                 <div className="terminal-line">
                     <span className="prompt">C:\Users\KEsquejo&gt;</span>
@@ -180,6 +187,7 @@ function Terminal() {
                         <div className="caps-lock-warning">Caps Lock is ON</div>
                     )}
                 </div>
+                {/* <div ref={terminalEndRef} /> */}
             </div>
         </div>
     );
