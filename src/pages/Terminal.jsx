@@ -24,20 +24,35 @@ const COMMANDS = [
 const HELLO = ["Greetings!", "World!", "Hi!", "Hey!", "ヾ(•＾▽＾•)"];
 const JOKES = ["!false (It’s funny because it’s true.)"];
 const getAsciiArt = () => {
-    return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
-▐                                                             ▌
-▐  __  __   ______  __      __      __  __                    ▌
-▐ /\\ \\/ /  /\\  ___\\/\\ \\    /\\ \\    /\\ \\_\\ \\                   ▌
-▐ \\ \\  _"-.\\ \\  __ \\ \\ \\___\\ \\ \\___\\ \\____ \\                  ▌
-▐  \\ \\_\\ \\_\\\\ \\_____\\ \\_____\\ \\_____\\/\\_____\\                 ▌
-▐  ______/___________________\\/_____________/  __  ______     ▌
-▐ /\\  ___\\/\\  ___\\/\\  __ \\/\\ \\/\\ \\/\\  ___\\    /\\ \\/\\  __ \\    ▌
-▐ \\ \\  __\\  \\___  \\ \\ \\/\\_\\ \\ \\_\\ \\ \\  __\\   _\\_\\ \\ \\ \\/\\ \\   ▌
-▐  \\ \\_____\\/\\_____\\ \\___\\_\\ \\_____\\ \\_____\\/\\_____\\ \\_____\\  ▌
-▐   \\/_____/\\/_____/\\/___/_/\\/_____/\\/_____/\\/_____/\\/_____/  ▌
-▐                                                             ▌
-▐                                                             ▌
-▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌`;
+    return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+▐                                                                                      ▌
+▐  __ ___ _____  ____   ____ ___ ___  _____  _____  _____  __ __  _____   ____  _____  ▌
+▐ |  |  //   __\\/  _/  /  _/ \\  |  / /   __\\/  ___>/  _  \\/  |  \\/   __\\  \\_  \\/  _  \\ ▌
+▐ |  _ < |   __||  |---|  |---|   |  |   __||___  ||  |  ||  |  ||   __|---|  ||  |  | ▌
+▐ |__|__\\\\_____/\\_____/\\_____/\\___/  \\_____/<_____/\\___\\ \\\\_____/\\_____/\\_____/\\_____/ ▌
+▐                                                        /                             ▌
+▐                                                                                      ▌
+▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌`;
+
+    //     return ` __ ___ _____  ____   ____ ___ ___   _____  _____  _____  __ __  _____   ____  _____
+    // |  |  //   __\\/  _/  /  _/ \\  |  /  /   __\\/  ___>/  _  \\/  |  \\/   __\\  \\_  \\/  _  \\
+    // |  _ < |   __||  |---|  |---|   |   |   __||___  ||  |  ||  |  ||   __|---|  ||  |  |
+    // |__|__\\\\_____/\\_____/\\_____/\\___/   \\_____/<_____/\\___\\ \\\\_____/\\_____/\\_____/\\_____/
+    //                                                         /                            `;
+    //     return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+    // ▐                                                             ▌
+    // ▐  __  __   ______  __      __      __  __                    ▌
+    // ▐ /\\ \\/ /  /\\  ___\\/\\ \\    /\\ \\    /\\ \\_\\ \\                   ▌
+    // ▐ \\ \\  _"-.\\ \\  __ \\ \\ \\___\\ \\ \\___\\ \\____ \\                  ▌
+    // ▐  \\ \\_\\ \\_\\\\ \\_____\\ \\_____\\ \\_____\\/\\_____\\                 ▌
+    // ▐  ______/___________________\\/_____________/  __  ______     ▌
+    // ▐ /\\  ___\\/\\  ___\\/\\  __ \\/\\ \\/\\ \\/\\  ___\\    /\\ \\/\\  __ \\    ▌
+    // ▐ \\ \\  __\\  \\___  \\ \\ \\/\\_\\ \\ \\_\\ \\ \\  __\\   _\\_\\ \\ \\ \\/\\ \\   ▌
+    // ▐  \\ \\_____\\/\\_____\\ \\___\\_\\ \\_____\\ \\_____\\/\\_____\\ \\_____\\  ▌
+    // ▐   \\/_____/\\/_____/\\/___/_/\\/_____/\\/_____/\\/_____/\\/_____/  ▌
+    // ▐                                                             ▌
+    // ▐                                                             ▌
+    // ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌`;
 };
 
 function Terminal() {
@@ -90,7 +105,7 @@ function Terminal() {
                         component = command.component; // Render the corresponding component if available
                     }
                 } else {
-                    output = `Unknown command: ${inputCmd}`;
+                    output = unknownCommand(inputCmd);
                 }
                 break;
             }
@@ -103,11 +118,27 @@ function Terminal() {
         ]);
     };
 
+    const unknownCommand = (inputCmd) => {
+        return (
+            <div className="output-unknown">
+                Unknown command: {inputCmd} <br />
+                Check the spelling of the command or type &#39;
+                {/*exit single quote code */}
+                <span className="output-unknown-tag">-help</span>&#39;
+                <span className="ouput-unknown-tag"></span>
+            </div>
+        );
+    };
+
     // Generates the output for the "-help" command
-    const generateHelpOutput = () => {
+    const generateHelpOutput = (handleCommandClick) => {
         const commandsList = COMMANDS.map((cmd, index) => (
             <div key={index} className="command-item">
-                <span className="command-cmd">{cmd.cmd || ""}</span>
+                <span
+                    className="command-cmd"
+                    onClick={() => handleCommandClick(cmd.cmd)}>
+                    {cmd.cmd || ""}
+                </span>
                 <span className="command-desc">{cmd.desc}</span>
             </div>
         ));
@@ -125,6 +156,11 @@ function Terminal() {
             </div>
         );
     };
+
+    // TODO:
+    // When the list of commands are outputted when user types '-help'
+    // Allow users to click any of them and execute said command
+    const handleCommandClick = (cmd) => {};
 
     const generateHelloOutput = () => {
         // Pick a random response from the HELLO array
