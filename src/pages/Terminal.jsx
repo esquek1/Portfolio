@@ -105,12 +105,22 @@ function Terminal() {
 
     // Generates the output for the "-help" command
     const generateHelpOutput = () => {
-        const secretMessage =
-            "Hint: There are two secret commands! Can you guess it?";
         const commandsList = COMMANDS.map(
             (cmd) => `${cmd.cmd?.padEnd(15) || ""} ${cmd.desc}`
         ).join("\n");
-        return `${commandsList}\n\n${secretMessage}`;
+
+        const secretMessage = (
+            <div className="secret-message">
+                Hint: There are two secret commands! Can you guess it?
+            </div>
+        );
+
+        return (
+            <div>
+                <pre>{commandsList}</pre>
+                {secretMessage}
+            </div>
+        );
     };
 
     const generateHelloOutput = () => {
