@@ -83,7 +83,7 @@ function Terminal() {
                 // placed {} brackets
                 const command = COMMANDS.find((cmd) => cmd.cmd === inputCmd);
                 if (command) {
-                    output = command.desc;
+                    // output = command.desc;
 
                     // If there is a component for the command, it will be added to the terminalHistory
                     if (command.component) {
@@ -105,9 +105,12 @@ function Terminal() {
 
     // Generates the output for the "-help" command
     const generateHelpOutput = () => {
-        const commandsList = COMMANDS.map(
-            (cmd) => `${cmd.cmd?.padEnd(15) || ""} ${cmd.desc}`
-        ).join("\n");
+        const commandsList = COMMANDS.map((cmd, index) => (
+            <div key={index} className="command-item">
+                <span className="command-cmd">{cmd.cmd || ""}</span>
+                <span className="command-desc">{cmd.desc}</span>
+            </div>
+        ));
 
         const secretMessage = (
             <div className="secret-message">
@@ -117,7 +120,7 @@ function Terminal() {
 
         return (
             <div>
-                <pre>{commandsList}</pre>
+                {commandsList}
                 {secretMessage}
             </div>
         );
@@ -187,7 +190,8 @@ function Terminal() {
                         <span className="terminal-command">
                             {entry.command}
                         </span>
-                        <pre>{entry.output}</pre>
+                        {/* <pre> {entry.output}</pre> */}
+                        <div className="entry-output"> {entry.output}</div>
 
                         {/* Render the component if present */}
                         {entry.component && (

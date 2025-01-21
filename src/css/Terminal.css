@@ -30,7 +30,6 @@
 }
 
 .terminal-line {
-    margin-bottom: 4px;
 }
 
 .prompt {
@@ -64,7 +63,35 @@
 .ascii-art {
     color: #ce2c2c;
 }
+.command-item {
+    display: flex; /* Use flexbox for alignment */
+    margin: 0px;
+    gap: 20px; /* Add space between columns */
+}
+
+.command-cmd {
+    margin: 0;
+    flex: 0 0 150px;
+    color: #ce2c2c; /* Green color for commands */
+    font-weight: bold;
+}
+
+.command-desc {
+    margin: 0;
+    flex: 1;
+    color: #f1ebc3;
+}
+
 .secret-message {
+    margin-top: 16px;
     color: #f54a0b;
     font-size: 16px;
+}
+
+.help-output {
+}
+
+.entry-output {
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
