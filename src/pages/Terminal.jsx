@@ -125,18 +125,20 @@ function Terminal() {
                 Check the spelling of the command or type &#39;
                 {/*exit single quote code */}
                 <span className="output-unknown-tag">-help</span>&#39;
-                <span className="ouput-unknown-tag"></span>
+                <span className="output-unknown-tag"></span>
             </div>
         );
     };
 
     // Generates the output for the "-help" command
-    const generateHelpOutput = (handleCommandClick) => {
+    const generateHelpOutput = () => {
         const commandsList = COMMANDS.map((cmd, index) => (
             <div key={index} className="command-item">
+                {/* When the list of commands are outputted when user types '-help'
+                Allow users to click any of them and execute said command */}
                 <span
                     className="command-cmd"
-                    onClick={() => handleCommandClick(cmd.cmd)}>
+                    onClick={() => processCommand(cmd.cmd)}>
                     {cmd.cmd || ""}
                 </span>
                 <span className="command-desc">{cmd.desc}</span>
@@ -157,11 +159,6 @@ function Terminal() {
         );
     };
 
-    // TODO:
-    // When the list of commands are outputted when user types '-help'
-    // Allow users to click any of them and execute said command
-    const handleCommandClick = (cmd) => {};
-
     const generateHelloOutput = () => {
         // Pick a random response from the HELLO array
         const randomResponse = HELLO[Math.floor(Math.random() * HELLO.length)];
@@ -172,6 +169,25 @@ function Terminal() {
         // Pick a random response from the JOKE array
         const randomResponse = JOKES[Math.floor(Math.random() * HELLO.length)];
         return randomResponse;
+    };
+
+    const generateBanner = () => {
+        return (
+            <>
+                <pre className="ascii-art">{asciiArt}</pre>
+                <span className="help-description">
+                    {/*exit single quote code */} Type &#39;
+                    <span
+                        className="output-unknown-tag"
+                        onClick={() => processCommand("-help")}>
+                        -help
+                    </span>
+                    &#39;
+                    <span className="output-unknown-tag"></span>
+                    to view a list of commands.
+                </span>
+            </>
+        );
     };
 
     // Clears the terminal history
@@ -217,8 +233,7 @@ function Terminal() {
     return (
         <div className="terminal-container">
             <div className="terminal-content">
-                <pre className="ascii-art">{asciiArt}</pre>
-
+                {generateBanner()}
                 {/* Iterate through the terminal history array and render the objects */}
                 {terminalHistory.map((entry, index) => (
                     <div key={index} className="terminal-line">
@@ -228,7 +243,6 @@ function Terminal() {
                         </span>
                         {/* <pre> {entry.output}</pre> */}
                         <div className="entry-output"> {entry.output}</div>
-
                         {/* Render the component if present */}
                         {entry.component && (
                             <div className="component-container">
