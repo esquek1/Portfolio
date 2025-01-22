@@ -27,9 +27,6 @@
     font-size: 16px;
 }
 
-.terminal-line {
-}
-
 .prompt {
     color: #28afbb;
 }
@@ -73,7 +70,7 @@
     font-size: 16px;
     margin: 0;
     flex: 0 0 150px;
-    color: #2fa14c; /* Green color for commands */
+    color: #a9ac15;
     font-weight: bold;
     cursor: pointer;
 }
@@ -85,7 +82,8 @@
 }
 
 .secret-message {
-    color: #f54a0b;
+    font-weight: bold;
+    color: #d3831c;
     font-size: 16px;
 }
 
@@ -98,12 +96,17 @@
 }
 
 .output-unknown-tag {
-    color: #2fa14c;
+    color: #a9ac15;
     font-weight: bold;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .output-unknown {
     color: #ce2c2c;
     font-size: 16px;
+}
+
+.help-description {
+    margin-bottom: 16px;
 }

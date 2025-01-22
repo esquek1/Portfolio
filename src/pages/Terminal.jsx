@@ -124,7 +124,12 @@ function Terminal() {
                 Unknown command: {inputCmd} <br />
                 Check the spelling of the command or type &#39;
                 {/*exit single quote code */}
-                <span className="output-unknown-tag">-help</span>&#39;
+                <span
+                    className="output-unknown-tag"
+                    onClick={() => processCommand("-help")}>
+                    -help
+                </span>
+                &#39;
                 <span className="output-unknown-tag"></span>
             </div>
         );
@@ -182,9 +187,7 @@ function Terminal() {
                         onClick={() => processCommand("-help")}>
                         -help
                     </span>
-                    &#39;
-                    <span className="output-unknown-tag"></span>
-                    to view a list of commands.
+                    &#39; to view a list of commands.
                 </span>
             </>
         );
