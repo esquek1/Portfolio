@@ -15,8 +15,8 @@
 .project-item {
 }
 
-.title {
-    border: 1px solid darkgoldenrod;
+.project-title {
+    font-size: 10px;
 }
 
 .project-skills {
@@ -24,7 +24,6 @@
 }
 
 .project-description {
-    border: 1px solid darkred;
 }
 
 .project-item img {
@@ -33,4 +32,21 @@
     border: 1px solid;
     border-color: #fff8ed;
     object-fit: contain;
+}
+
+.project-link:link {
+    color: #f1c789;
+    text-decoration: none;
+}
+.project-link:visited {
+    color: #f1c789;
+}
+
+.project-link:hover {
+    color: #ce2c2c;
+    font-weight: bold;
+}
+
+.private {
+    font-style: italic;
 }
