@@ -1,21 +1,8 @@
 import React, { useState, useEffect } from "react";
-
-// Call Joke API
+import "../css/joke.css";
+// Joke API
+// REST API (no token, membership, payment, etc)
 // https://sv443.net/jokeapi/v2/#try-it
-// const JOKES = [
-//     {
-//         setup: "What do you call when 8 mosquitos bite you?",
-//         punchline: "A mosquito byte.",
-//     },
-//     {
-//         setup: null,
-//         punchline: "I told my computer I needed a break... and it froze.",
-//     },
-//     { setup: null, punchline: "!false (It’s funny because it’s true.)" },
-//     { setup: "How did the first program die?", punchline: "It was executed." },
-//     { setup: "How do robots eat pizza?", punchline: "One byte at a time." },
-//     { setup: null, punchline: "Error 404: joke not found" },
-// ];
 
 const JokeGenerator = () => {
     const [joke, setJoke] = useState(null);
@@ -23,10 +10,9 @@ const JokeGenerator = () => {
 
     useEffect(() => {
         // Fetch a random joke when the component mounts
-        // fetch(
-        //     "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
-        // )
-        fetch("https://v2.jokeapi.dev/joke/Dark")
+        fetch(
+            "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
+        )
             .then((response) => response.json())
             .then((data) => {
                 setJoke(data);
@@ -55,7 +41,7 @@ const JokeGenerator = () => {
                         </>
                     )}
                     {joke.type === "single" && (
-                        <div className="joke">{joke.joke}</div>
+                        <div className="joke-single">{joke.joke}</div>
                     )}
                 </>
             )}

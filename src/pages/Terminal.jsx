@@ -112,7 +112,9 @@ function Terminal() {
             case "-joke":
                 output = <Jokes />;
                 break;
-
+            case "-secret":
+                output = "Not a secret command.";
+                break;
             default: {
                 // To avoid the following error: "Unexpected lexical declaration in case block"
                 // placed {} brackets
