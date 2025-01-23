@@ -2,9 +2,9 @@ import React, { useRef, useState, useEffect } from "react";
 import "../css/Terminal.css";
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Help from "../components/Help";
 import Projects from "../components/Projects";
 import Jokes from "../components/Joke";
+
 const COMMANDS = [
     { cmd: "-about", desc: "About Me", component: <About /> },
     { cmd: "-clear", desc: "Clear the terminal", component: null },
@@ -22,6 +22,20 @@ const COMMANDS = [
 ];
 
 const HELLO = ["Greetings!", "World!", "Hi!", "Hey!", "ヾ(•＾▽＾•)"];
+
+const XSSATTACKS = [
+    // Basic XSS Payloads
+    "<script>alert('XSS');</script>",
+    "<img src='invalid' onerror=\"alert('XSS')\">",
+    "\"><script>alert('XSS');</script>",
+    "<img src=x onerror=\"alert('XSS');\">",
+    "<svg/onload=alert('XSS')>",
+    '" onfocus="alert(\'XSS\')" autofocus',
+    "<scr<script>ipt>alert('XSS');</scr<script>ipt>",
+    '" onmouseover="alert(\'XSS\')"',
+    "&#x3C;script&#x3E;alert('XSS')&#x3C;/script&#x3E;",
+    "<<script>alert('XSS');//<</script>",
+];
 
 const getAsciiArt = () => {
     return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
@@ -84,8 +98,8 @@ function Terminal() {
     // Ensure inputVal state is in sync with the input value
     // best practices for form handling
     // makes the component controlled
-    const handleInputChange = (event) => {
-        setInputVal(event.target.value);
+    const handleInputChange = (inputText) => {
+        setInputVal(inputText.target.value);
     };
 
     // Scrolls to the input text after command has been process
@@ -98,38 +112,45 @@ function Terminal() {
         let output = "";
         let component = null;
 
-        switch (inputCmd) {
-            case "-clear":
-                clearTerminal();
-                return; // Do not append "-clear" to the history
+        // Check if it is on the list of XSS Attacks
+        if (XSSATTACKS.includes(inputCmd)) {
+            output = "Don't do that";
+        } else {
+            switch (inputCmd) {
+                case "-clear":
+                    clearTerminal();
+                    return; // Do not append "-clear" to the history
 
-            case "-help":
-                output = generateHelpOutput();
-                break;
-            case "-hello":
-                output = generateHelloOutput();
-                break;
-            case "-joke":
-                output = <Jokes />;
-                break;
-            case "-secret":
-                output = "Not a secret command.";
-                break;
-            default: {
-                // To avoid the following error: "Unexpected lexical declaration in case block"
-                // placed {} brackets
-                const command = COMMANDS.find((cmd) => cmd.cmd === inputCmd);
-                if (command) {
-                    // output = command.desc;
+                case "-help":
+                    output = generateHelpOutput();
+                    break;
+                case "-hello":
+                    output = generateHelloOutput();
+                    break;
+                case "-joke":
+                    output = <Jokes />;
+                    break;
+                case "-secret":
+                    output = "Not a secret command.";
+                    break;
+                default: {
+                    // To avoid the following error: "Unexpected lexical declaration in case block"
+                    // placed {} brackets
+                    const command = COMMANDS.find(
+                        (cmd) => cmd.cmd === inputCmd
+                    );
+                    if (command) {
+                        // output = command.desc;
 
-                    // If there is a component for the command, it will be added to the terminalHistory
-                    if (command.component) {
-                        component = command.component; // Render the corresponding component if available
+                        // If there is a component for the command, it will be added to the terminalHistory
+                        if (command.component) {
+                            component = command.component; // Render the corresponding component if available
+                        }
+                    } else {
+                        output = unknownCommand(inputCmd);
                     }
-                } else {
-                    output = unknownCommand(inputCmd);
+                    break;
                 }
-                break;
             }
         }
 
@@ -185,22 +206,10 @@ function Terminal() {
         );
     };
 
+    // Pick a random response from the HELLO array
     const generateHelloOutput = () => {
-        // Pick a random response from the HELLO array
         const randomResponse = HELLO[Math.floor(Math.random() * HELLO.length)];
         return randomResponse;
-    };
-
-    const generateJokeOutput = () => {
-        // Pick a random response from the JOKE array
-        const randomResponse = JOKES[Math.floor(Math.random() * JOKES.length)];
-
-        // If the chosen joke has a setup, delay the punchline
-        if (randomResponse.setup) {
-            return `${randomResponse.setup} - ${randomResponse.punchline}`;
-        }
-
-        return randomResponse.punchline;
     };
 
     // Output name banner and introduction to program
@@ -272,7 +281,7 @@ function Terminal() {
                         <span className="terminal-command">
                             {entry.command}
                         </span>
-                        {/* <pre> {entry.output}</pre> */}
+
                         <div className="entry-output"> {entry.output}</div>
                         {/* Render the component if present */}
                         {entry.component && (
@@ -292,15 +301,16 @@ function Terminal() {
                         onChange={handleInputChange}
                         onKeyDown={handleKeyDown}
                         autoFocus
+                        size="80"
                         type="text"
                         className="terminal-input"
                     />
+
                     {/* Show Caps Lock warning */}
                     {capsLock && (
                         <div className="caps-lock-warning">Caps Lock is ON</div>
                     )}
                 </div>
-                {/* <div ref={terminalEndRef} /> */}
             </div>
         </div>
     );

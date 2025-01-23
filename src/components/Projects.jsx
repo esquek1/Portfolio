@@ -42,59 +42,73 @@ const rightWayArt = () => {
 const PROJECTS = [
     {
         title: cypherVaultArt(),
-        skills: "C++, SQLite, AES Encryption",
+        skills: ["C++", "SQLite", "AES Encryption"],
         description: `A terminal-based, multi-factor authentication password manager
-    using C++ and SQLite. Implemented AES encryption to ensure
-    data security.`,
+        using C++ and SQLite. Implemented AES encryption to ensure
+        data security.`,
+        features: null,
         link: "https://github.com/esquek1/CypherVault",
         isPrivate: false,
     },
     {
         title: portfolioWebsiteArt(),
-        skills: "TypeScript, React, HTML, CSS",
+        skills: ["TypeScript", "React", "HTML", "CSS"],
         description: `
         Collaborated with Reena Castillo, a graphic designer, to bring
         their vision to life by developing a portfolio website that
         showcases their creative work.`,
+        features: null,
         link: "https://github.com/esquek1/graphic-design-portfolio",
         isPrivate: false,
     },
     {
         title: compilerArt(),
-        skills: "Java",
+        skills: ["Java"],
         description: `
-        Developed a compiler for the Espresso language as a term project,
-        collaborating with another developer to design and implement
-        compiler components using Java. <ul>
-//         //                     <li>Scanner and Parser</li>
-//         //                     <li>Parse Tree Construction</li>
-//         //                     <li>Semantic Checker</li>
-//         //                     <li>Type Checking</li>
-//         //                     <li>Modifier Checking</li>
-//         //                 </ul>`,
+        Collaborated with another developer to develop a compiler for the 
+        Espresso language as a term project, to design and implement
+        compiler components using Java.`,
+        features: [
+            "Scanner and Parser",
+            "Parse Tree Construction",
+            "Semantic Checker",
+            "Type Checking",
+            "Modifier Checking",
+        ],
+
         isPrivate: true,
     },
     {
         title: rightWayArt(),
-        skills: "React Js, JavaScript, HTML, CSS",
+        skills: ["React Js", "JavaScript", "HTML", "CSS"],
         description: `
         A web application written in ReactJS and CSS aimed at simplifying
         the planning process for trip recommendations. Project was
         showcased at the Fred and Harriet Cox Senior Design Competition.`,
+        features: null,
         link: "https://github.com/esquek1/RightWay",
         isPrivate: false,
     },
 ];
+
 // Add PropTypes validation
 ProjectItem.propTypes = {
     title: PropTypes.string.isRequired,
-    skills: PropTypes.string.isRequired,
+    skills: PropTypes.arrayOf(PropTypes.string).isRequired,
     description: PropTypes.string.isRequired,
+    features: PropTypes.arrayOf(PropTypes.string),
     link: PropTypes.string,
     isPrivate: PropTypes.bool.isRequired,
 };
 
-function ProjectItem({ title, skills, description, link, isPrivate }) {
+function ProjectItem({
+    title,
+    skills,
+    description,
+    features,
+    link,
+    isPrivate,
+}) {
     return (
         <div className="project-item">
             {link ? (
@@ -104,12 +118,19 @@ function ProjectItem({ title, skills, description, link, isPrivate }) {
             ) : (
                 <pre className="project-title">{title}</pre>
             )}
-            <h5 className="project-skills">{skills}</h5>
-            <p className="project-description">{description}</p>
+            <h5 className="project-skills">{skills.join(", ")}</h5>
             {isPrivate && (
-                <span className="private">
+                <h5 className="private">
                     (This project is a private repository.)
-                </span>
+                </h5>
+            )}
+            <div className="project-description">{description}</div>
+            {features?.length > 0 && (
+                <ul className="project-features">
+                    {features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                    ))}
+                </ul>
             )}
         </div>
     );

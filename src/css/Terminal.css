@@ -49,21 +49,19 @@
     border: none;
 }
 
-/* .terminal-input:not(focus) {
-} */
-
 .terminal-output {
-    color: #f1c789; /* Standard white output */
+    color: #f1c789;
 }
 
 .ascii-art {
     color: #ce2c2c;
 }
+
 .command-item {
-    display: flex; /* Use flexbox for alignment */
+    display: flex;
     margin: 0px;
     margin-bottom: 16px;
-    gap: 20px; /* Add space between columns */
+    gap: 20px;
 }
 
 .command-cmd {
@@ -85,9 +83,6 @@
     font-weight: bold;
     color: #d3831c;
     font-size: 16px;
-}
-
-.help-output {
 }
 
 .entry-output {
