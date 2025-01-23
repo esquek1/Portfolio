@@ -4,7 +4,8 @@ function About() {
     return (
         <div className="about-content">
             <div className="about-description">
-                Hello! My name is Kelly. I am a Junior Software Engineer.
+                Hello! My name is Kelly Esquejo. I am a Junior Software
+                Engineer.
             </div>
             <div className="about-skills">
                 <p>Here are a few technologies I&#39;ve worked with:</p>

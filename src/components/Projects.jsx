@@ -41,6 +41,7 @@ function Projects() {
     return (
         <div className="project-container">
             <div className="project-content">
+                Below are details of some of the projects I have worked on:
                 <div className="project-item">
                     <a
                         className="project-link"

@@ -4,7 +4,7 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import Help from "../components/Help";
 import Projects from "../components/Projects";
-
+import Jokes from "../components/Joke";
 const COMMANDS = [
     { cmd: "-about", desc: "About Me", component: <About /> },
     { cmd: "-clear", desc: "Clear the terminal", component: null },
@@ -22,7 +22,7 @@ const COMMANDS = [
 ];
 
 const HELLO = ["Greetings!", "World!", "Hi!", "Hey!", "ヾ(•＾▽＾•)"];
-const JOKES = ["!false (It’s funny because it’s true.)"];
+
 const getAsciiArt = () => {
     return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 ▐                                                                                      ▌
@@ -106,6 +106,12 @@ function Terminal() {
             case "-help":
                 output = generateHelpOutput();
                 break;
+            case "-hello":
+                output = generateHelloOutput();
+                break;
+            case "-joke":
+                output = <Jokes />;
+                break;
 
             default: {
                 // To avoid the following error: "Unexpected lexical declaration in case block"
@@ -185,8 +191,14 @@ function Terminal() {
 
     const generateJokeOutput = () => {
         // Pick a random response from the JOKE array
-        const randomResponse = JOKES[Math.floor(Math.random() * HELLO.length)];
-        return randomResponse;
+        const randomResponse = JOKES[Math.floor(Math.random() * JOKES.length)];
+
+        // If the chosen joke has a setup, delay the punchline
+        if (randomResponse.setup) {
+            return `${randomResponse.setup} - ${randomResponse.punchline}`;
+        }
+
+        return randomResponse.punchline;
     };
 
     // Output name banner and introduction to program
