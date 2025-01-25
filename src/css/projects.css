@@ -41,6 +41,12 @@
     }
 }
 
+@media (max-width: 425px) {
+    .project-title {
+        font-size: 2px;
+    }
+}
+
 .project-skills {
     color: rgb(196, 172, 238);
     margin: 10px 0 10px 0;

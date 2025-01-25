@@ -12,6 +12,14 @@ body {
     box-sizing: border-box;
 }
 
+@media (max-width: 375px) {
+    .app-container {
+        width: calc(100dvw - 16px);
+        height: calc(100dvh - 16px);
+        margin: 8px;
+    }
+}
+
 .app-container::-webkit-scrollbar {
     display: none;
 }
@@ -24,10 +32,4 @@ body {
     height: 100%;
     padding: 12px;
     box-sizing: border-box;
-}
-
-.temp {
-    width: 100%;
-    height: 100%;
-    border: 1px solid;
 }
