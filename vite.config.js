@@ -7,4 +7,5 @@ export default defineConfig({
     server: {
         open: true, // This opens the app in the default browser
     },
+    base: "/Portfolio/",
 });

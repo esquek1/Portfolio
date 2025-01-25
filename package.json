@@ -1,16 +1,16 @@
 {
+    "homepage": "https://esquek1.github.io/Portfolio",
     "name": "my-portfolio",
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://esquek1.github.io/Portfolio",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "prop-types": "^15.8.1",
