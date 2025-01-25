@@ -7,27 +7,42 @@
 }
 
 .project-item {
-    margin: 26px 0 26px 0;
-    width: 40vw;
+    margin: 0 0 16px 0;
     padding-right: 12px;
 }
 
-/* When the window is smaller */
-@media (max-width: 1960px) {
-    /* Adjust the breakpoint as necessary */
+@media (max-width: 2560px) {
     .project-item {
-        width: 80vw; /* Set a different width for smaller screens */
+        width: 50vw;
     }
 }
+
+@media (max-width: 1960px) {
+    .project-item {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .project-item {
+        width: 75vw;
+    }
+}
+
 .project-title {
     color: #ede7f6;
     font-size: 5px;
     width: 50vw;
 }
 
-.project-skills {
-    color: rgb(135, 119, 163);
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 3px;
+    }
+}
 
+.project-skills {
+    color: rgb(196, 172, 238);
     margin: 10px 0 10px 0;
 }
 

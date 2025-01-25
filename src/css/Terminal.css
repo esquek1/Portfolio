@@ -87,9 +87,15 @@ Law of Similarity */
     color: #f1c789;
 }
 
-.ascii-art {
+.name-banner {
     font-size: 12px;
     color: #ce2c2c;
+}
+
+@media (max-width: 768px) {
+    .name-banner {
+        font-size: 5px;
+    }
 }
 
 .command-item {
