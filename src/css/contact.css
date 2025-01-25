@@ -5,6 +5,20 @@
     margin-bottom: 16px;
 }
 
-.contact-content {
-    max-height: 100%;
+.contact-links {
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+.contact-links:link {
+    color: #ede7f6;
+    text-decoration: none;
+}
+.contact-links:visited {
+    color: #ede7f6;
+}
+
+.contact-links:hover {
+    color: #8b5cf6;
+    font-weight: bolder;
 }

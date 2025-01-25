@@ -1,11 +1,34 @@
-import React from "react";
 import "../css/contact.css";
 function Contact() {
     return (
         <div className="contact-container">
-            <div className="contact-content">GitHub</div>
-            <div className="contact-content">LinkedIn</div>
-            <div className="contact-content">Resume</div>
+            <p>Feel free to check my profiles and resume:</p>
+            <div className="contact-content">
+                <a
+                    className="contact-links"
+                    href="https://github.com/esquek1"
+                    rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+            <div className="contact-content">
+                <a
+                    className="contact-links"
+                    href="https://www.linkedin.com/in/kelly-esquejo"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+            <div className="contact-content">
+                <a
+                    className="contact-links"
+                    href="https://your-resume-link.com"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Resume
+                </a>
+            </div>
         </div>
     );
 }
