@@ -1,8 +1,18 @@
-# React + Vite
+# Terminal Porfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Thisw website showcases my skills, projects, and experiences as a software developer.
 
-Currently, two official plugins are available:
+## Table of Contents 
+- [Technologies Used](#technologies-used)  
+- [Design](#design)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+## Technologies Used  
+  - React.js  
+  - HTML5  
+  - CSS3  
+  - JavaScript
+
+---
+## Design
+The website features a terminal-inspired design, offering a familiar interface to users. It includes interactive commands such as -help and -about, along with hidden secret commands to enhance user engagement.
