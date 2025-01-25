@@ -58,7 +58,7 @@ Law of Similarity */
 }
 
 .name-banner {
-    font-size: clamp(1vw, 1vw, 12px);
+    font-size: clamp(0.5vw, 0.75vw, 1vw);
     color: #ce2c2c;
 }
 
