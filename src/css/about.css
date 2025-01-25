@@ -1,9 +1,30 @@
-.about-container {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-}
-
 .about-content {
     max-height: 100%;
+    width: 50vw;
+}
+
+@media (max-width: 2560px) {
+    .about-content {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1960px) {
+    .about-content {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-content {
+        width: 75vw;
+    }
+}
+
+.about-description {
+    color: #ede7f6;
+}
+
+.about-skills {
+    color: rgb(196, 172, 238);
 }

@@ -48,7 +48,7 @@
 }
 
 .project-skills {
-    color: rgb(196, 172, 238);
+    color: rgb(178, 156, 214);
     margin: 10px 0 10px 0;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .project-features {
-    color: #d1c4e9;
+    color: #a69bb9;
 }
 
 .project-link:link {
@@ -70,7 +70,6 @@
 
 .project-link:hover {
     color: #8b5cf6;
-
     font-weight: bolder;
 }
 
