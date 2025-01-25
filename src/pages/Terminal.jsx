@@ -38,15 +38,27 @@ const XSSATTACKS = [
 ];
 
 const getAsciiArt = () => {
-    return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
-▐                                                                                      ▌
-▐  __ ___ _____  ____   ____ ___ ___  _____  _____  _____  __ __  _____   ____  _____  ▌
-▐ |  |  //   __\\/  _/  /  _/ \\  |  / /   __\\/  ___>/  _  \\/  |  \\/   __\\  \\_  \\/  _  \\ ▌
-▐ |  _ < |   __||  |___|  |___|   |  |   __||___  ||  |  ||  |  ||   __|/\\_|  ||  |  | ▌
-▐ |__|__\\\\_____/\\_____/\\_____/\\___/  \\_____/<_____/\\___\\ \\\\_____/\\_____/\\_____/\\_____/ ▌
-▐                                                        /                             ▌
-▐                                                                                      ▌
-▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌`;
+    return ` █████   ████          ████  ████                ██████████                                         ███          
+░░███   ███░          ░░███ ░░███               ░░███░░░░░█                                        ░░░           
+ ░███  ███     ██████  ░███  ░███  █████ ████    ░███  █ ░   █████   ████████ █████ ████  ██████   █████  ██████ 
+ ░███████     ███░░███ ░███  ░███ ░░███ ░███     ░██████    ███░░   ███░░███ ░░███ ░███  ███░░███ ░░███  ███░░███
+ ░███░░███   ░███████  ░███  ░███  ░███ ░███     ░███░░█   ░░█████ ░███ ░███  ░███ ░███ ░███████   ░███ ░███ ░███
+ ░███ ░░███  ░███░░░   ░███  ░███  ░███ ░███     ░███ ░   █ ░░░░███░███ ░███  ░███ ░███ ░███░░░    ░███ ░███ ░███
+ █████ ░░████░░██████  █████ █████ ░░███████     ██████████ ██████ ░░███████  ░░████████░░██████   ░███ ░░██████ 
+░░░░░   ░░░░  ░░░░░░  ░░░░░ ░░░░░   ░░░░░███    ░░░░░░░░░░ ░░░░░░   ░░░░░███   ░░░░░░░░  ░░░░░░    ░███  ░░░░░░  
+                                    ███ ░███                            ░███                   ███ ░███          
+                                   ░░██████                             █████                  ░░██████           
+                                    ░░░░░░                             ░░░░░                    ░░░░░░            `;
+
+    //     return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+    // ▐                                                                                      ▌
+    // ▐  __ ___ _____  ____   ____ ___ ___  _____  _____  _____  __ __  _____   ____  _____  ▌
+    // ▐ |  |  //   __\\/  _/  /  _/ \\  |  / /   __\\/  ___>/  _  \\/  |  \\/   __\\  \\_  \\/  _  \\ ▌
+    // ▐ |  _ < |   __||  |___|  |___|   |  |   __||___  ||  |  ||  |  ||   __|/\\_|  ||  |  | ▌
+    // ▐ |__|__\\\\_____/\\_____/\\_____/\\___/  \\_____/<_____/\\___\\ \\\\_____/\\_____/\\_____/\\_____/ ▌
+    // ▐                                                        /                             ▌
+    // ▐                                                                                      ▌
+    // ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌`;
 
     // return `▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
     // ▐                                                             ▌
@@ -79,9 +91,6 @@ const getAsciiArt = () => {
     // ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
     // `;
 };
-
-// Jakob's Law
-// Law of Similarity
 
 function Terminal() {
     const asciiArt = getAsciiArt();
@@ -244,6 +253,28 @@ function Terminal() {
             setCapsLock(false);
         }
 
+        let matchingCommands = [];
+        let currentMatchIndex = 0; // Keeps track of the current match index
+
+        if (event.key === "Tab") {
+            event.preventDefault(); // Prevent the default tab behavior
+
+            // Get the matching commands based on the current input
+            matchingCommands = COMMANDS.filter((command) =>
+                command.startsWith(inputVal)
+            );
+
+            if (matchingCommands.length === 1) {
+                // If there's exactly one match, complete the input
+                setInputVal(matchingCommands[0]);
+            } else if (matchingCommands.length > 1) {
+                // If there are multiple matches, cycle through them using the currentMatchIndex
+                currentMatchIndex =
+                    (currentMatchIndex + 1) % matchingCommands.length;
+                setInputVal(matchingCommands[currentMatchIndex]);
+            }
+        }
+
         if (event.key === "Enter") {
             const inputCmd = inputVal.trim(); // Trim white spaces
             processCommand(inputCmd);
@@ -301,7 +332,6 @@ function Terminal() {
                         onChange={handleInputChange}
                         onKeyDown={handleKeyDown}
                         autoFocus
-                        size="80"
                         type="text"
                         className="terminal-input"
                     />

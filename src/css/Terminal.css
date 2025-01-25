@@ -1,3 +1,6 @@
+/* Jakob's Law
+Law of Similarity */
+
 .terminal-container {
     display: flex;
     flex-direction: column;
@@ -7,6 +10,34 @@
     position: relative;
     width: 100%;
     height: 100%;
+}
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #343a4a; /* Dark retro color */
+    border-radius: 10px;
+}
+
+/* Thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #f1c789; /* Light retro color for the thumb */
+    border-radius: 10px;
+    border: 2px solid #343a4a; /* Match the track color for a clean border */
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ce2c2c; /* Brighter retro color for hover */
+}
+
+/* Corner (for both horizontal and vertical scrollbars) */
+::-webkit-scrollbar-corner {
+    background: #28afbb; /* Different retro color for the corner */
 }
 
 .terminal-content {
@@ -36,16 +67,19 @@
 }
 
 .terminal-input {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 16px;
     color: #f1ebc3;
     background-color: #343a4a;
-    cursor: default;
+    cursor: text;
     border: none;
-    font-size: 16px;
+    outline: none;
+    width: 50vw;
 }
 
 .terminal-input:focus {
     color: #f1c789;
-    font-size: 16px;
+    cursor: text;
     border: none;
 }
 
@@ -54,6 +88,7 @@
 }
 
 .ascii-art {
+    font-size: 12px;
     color: #ce2c2c;
 }
 

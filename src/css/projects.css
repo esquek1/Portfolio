@@ -1,53 +1,60 @@
 .project-container {
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
 }
 
-.project-content::-webkit-scrollbar {
-    /* display: none; */
-}
-
-.project-content {
-}
-
 .project-item {
-    margin-left: 16px;
+    margin: 26px 0 26px 0;
+    width: 40vw;
+    padding-right: 12px;
 }
 
+/* When the window is smaller */
+@media (max-width: 1960px) {
+    /* Adjust the breakpoint as necessary */
+    .project-item {
+        width: 80vw; /* Set a different width for smaller screens */
+    }
+}
 .project-title {
-    font-size: 10px;
+    color: #ede7f6;
+    font-size: 5px;
+    width: 50vw;
 }
 
 .project-skills {
-    font-style: italic;
+    color: rgb(135, 119, 163);
+
+    margin: 10px 0 10px 0;
 }
 
 .project-description {
+    color: rgb(196 181 253);
 }
 
-.project-item img {
-    width: 450px;
-    height: auto;
-    border: 1px solid;
-    border-color: #fff8ed;
-    object-fit: contain;
+.project-features {
+    color: #d1c4e9;
 }
 
 .project-link:link {
-    color: #f1c789;
+    color: #ede7f6;
     text-decoration: none;
 }
 .project-link:visited {
-    color: #f1c789;
+    color: #ede7f6;
 }
 
 .project-link:hover {
-    color: #ce2c2c;
-    font-weight: bold;
+    color: #8b5cf6;
+
+    font-weight: bolder;
 }
 
 .private {
+    color: #2ec4b6;
+    margin: 0;
     font-style: italic;
 }
