@@ -11,35 +11,6 @@ Law of Similarity */
     width: 100%;
     height: 100%;
 }
-/* Style the scrollbar */
-::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-    height: 10px; /* Height of the horizontal scrollbar */
-}
-
-/* Track (background of the scrollbar) */
-::-webkit-scrollbar-track {
-    background: #343a4a; /* Dark retro color */
-    border-radius: 10px;
-}
-
-/* Thumb (the draggable part of the scrollbar) */
-::-webkit-scrollbar-thumb {
-    background: #f1c789; /* Light retro color for the thumb */
-    border-radius: 10px;
-    border: 2px solid #343a4a; /* Match the track color for a clean border */
-}
-
-/* Thumb on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #ce2c2c; /* Brighter retro color for hover */
-}
-
-/* Corner (for both horizontal and vertical scrollbars) */
-::-webkit-scrollbar-corner {
-    background: #28afbb; /* Different retro color for the corner */
-}
-
 .terminal-content {
     display: flex;
     flex-direction: column;
@@ -145,4 +116,33 @@ Law of Similarity */
 
 .help-description {
     margin-bottom: 16px;
+}
+
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #343a4a; /* Dark retro color */
+    border-radius: 10px;
+}
+
+/* Thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #f1c789; /* Light retro color for the thumb */
+    border-radius: 10px;
+    border: 2px solid #343a4a; /* Match the track color for a clean border */
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ce2c2c; /* Brighter retro color for hover */
+}
+
+/* Corner (for both horizontal and vertical scrollbars) */
+::-webkit-scrollbar-corner {
+    background: #28afbb; /* Different retro color for the corner */
 }

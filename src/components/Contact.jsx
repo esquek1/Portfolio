@@ -23,7 +23,7 @@ function Contact() {
             <div className="contact-content">
                 <a
                     className="contact-links"
-                    href="https://your-resume-link.com"
+                    href="/Esquejo_Kelly_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer">
                     Resume

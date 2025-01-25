@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "../css/Background.css";
 
-// Use Canvas APi to draw a night sky (gradient)
-
+// Futyre
+// Use Canvas API to draw a night sky (gradient)
 const Background = () => {
     const canvasRef = useRef(null);
 
