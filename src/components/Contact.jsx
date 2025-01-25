@@ -21,13 +21,13 @@ function Contact() {
                 </a>
             </div>
             <div className="contact-content">
-                {/* <a
+                <a
                     className="contact-links"
-                    href="/Portfolio/Esquejo_Kelly_Resume.pdf"
+                    href="/Esquejo_Kelly_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer">
                     Resume
-                </a> */}
+                </a>
             </div>
         </div>
     );
