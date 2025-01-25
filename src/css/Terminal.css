@@ -58,8 +58,26 @@ Law of Similarity */
 }
 
 .name-banner {
-    font-size: clamp(0.5vw, 0.75vw, 1vw);
+    font-size: 12px;
     color: #ce2c2c;
+}
+
+@media (max-width: 768px) {
+    .name-banner {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .name-banner {
+        font-size: 5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .name-banner {
+        font-size: 4px;
+    }
 }
 
 .command-item {

@@ -60,8 +60,9 @@ function Terminal() {
 
     // Array for previously entered commands including command name, description, and component
     const [terminalHistory, setTerminalHistory] = useState([]);
-    // State for Caps Lock
-    const [capsLock, setCapsLock] = useState(false);
+
+    // // State for Caps Lock
+    // const [capsLock, setCapsLock] = useState(false);
 
     // Handles every change typed or deleted in the input field
     // Ensure inputVal state is in sync with the input value
@@ -207,11 +208,11 @@ function Terminal() {
     // Handle user pressing Enter
     const handleKeyDown = (event) => {
         // Detect if Caps Lock is on
-        if (event.getModifierState("CapsLock")) {
-            setCapsLock(true);
-        } else {
-            setCapsLock(false);
-        }
+        // if (event.getModifierState("CapsLock")) {
+        //     setCapsLock(true);
+        // } else {
+        //     setCapsLock(false);
+        // }
 
         let matchingCommands = [];
         let currentMatchIndex = 0; // Keeps track of the current match index
@@ -272,7 +273,6 @@ function Terminal() {
                         <span className="terminal-command">
                             {entry.command}
                         </span>
-
                         <div className="entry-output"> {entry.output}</div>
                         {/* Render the component if present */}
                         {entry.component && (
@@ -297,9 +297,9 @@ function Terminal() {
                     />
 
                     {/* Show Caps Lock warning */}
-                    {capsLock && (
+                    {/* {capsLock && (
                         <div className="caps-lock-warning">Caps Lock is ON</div>
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>
