@@ -53,8 +53,26 @@ const NameBanner = () => {
 };
 
 function Terminal() {
-    const getNameBanner = NameBanner();
+    // Output name banner and introduction to program
+    const generateBanner = () => {
+        return (
+            <>
+                <div className="banner">
+                    <pre className="name-banner">{NameBanner()}</pre>
+                </div>
 
+                <span className="help-description">
+                    {/*exit single quote code */} Type or click &#39;
+                    <span
+                        className="output-unknown-tag"
+                        onClick={() => processCommand("-help")}>
+                        -help
+                    </span>
+                    &#39; to view a list of commands.
+                </span>
+            </>
+        );
+    };
     const [inputVal, setInputVal] = useState("");
     const inputRef = useRef(null);
 
@@ -182,24 +200,6 @@ function Terminal() {
         return randomResponse;
     };
 
-    // Output name banner and introduction to program
-    const generateBanner = () => {
-        return (
-            <>
-                <pre className="name-banner">{getNameBanner}</pre>
-                <span className="help-description">
-                    {/*exit single quote code */} Type or click &#39;
-                    <span
-                        className="output-unknown-tag"
-                        onClick={() => processCommand("-help")}>
-                        -help
-                    </span>
-                    &#39; to view a list of commands.
-                </span>
-            </>
-        );
-    };
-
     // Clears the terminal history
     const clearTerminal = () => {
         setTerminalHistory([]);
@@ -266,6 +266,7 @@ function Terminal() {
         <div className="terminal-container">
             <div className="terminal-content">
                 {generateBanner()}
+
                 {/* Iterate through the terminal history array and render the objects */}
                 {terminalHistory.map((entry, index) => (
                     <div key={index} className="terminal-line">
