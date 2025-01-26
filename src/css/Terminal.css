@@ -79,7 +79,7 @@ Law of Similarity */
         font-size: 4px;
     }
 }
-@media (max-width: 300px) {
+@media (max-width: 315px) {
     .name-banner {
         font-size: 3.5px;
     }
