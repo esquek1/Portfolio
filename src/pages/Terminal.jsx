@@ -8,6 +8,7 @@ import { BsCapslockFill } from "react-icons/bs";
 
 const COMMANDS = [
     { cmd: "-about", desc: "About me", component: <About /> },
+    { cmd: "-banner", desc: "Display banner", component: null },
     { cmd: "-clear", desc: "Clear the terminal", component: null },
     {
         cmd: "-contact",
@@ -53,26 +54,6 @@ const NameBanner = () => {
 };
 
 function Terminal() {
-    // Output name banner and introduction to program
-    const generateBanner = () => {
-        return (
-            <>
-                <div className="banner">
-                    <pre className="name-banner">{NameBanner()}</pre>
-                </div>
-
-                <span className="help-description">
-                    {/*exit single quote code */} Type or click &#39;
-                    <span
-                        className="output-unknown-tag"
-                        onClick={() => processCommand("-help")}>
-                        -help
-                    </span>
-                    &#39; to view a list of commands.
-                </span>
-            </>
-        );
-    };
     const [inputVal, setInputVal] = useState("");
     const inputRef = useRef(null);
 
@@ -105,6 +86,10 @@ function Terminal() {
             output = "Don't do that";
         } else {
             switch (inputCmd) {
+                case "-banner":
+                    output = generateBanner();
+                    break;
+
                 case "-clear":
                     clearTerminal();
                     return; // Do not append "-clear" to the history
@@ -147,6 +132,26 @@ function Terminal() {
             ...prevHistory,
             { command: inputCmd, output, component },
         ]);
+    };
+    // Output name banner and introduction to program
+    const generateBanner = () => {
+        return (
+            <div>
+                <div className="banner">
+                    <pre className="name-banner">{NameBanner()}</pre>
+                </div>
+
+                <span className="help-description">
+                    {/*exit single quote code */} Type or click &#39;
+                    <span
+                        className="output-unknown-tag"
+                        onClick={() => processCommand("-help")}>
+                        -help
+                    </span>
+                    &#39; to view a list of commands.
+                </span>
+            </div>
+        );
     };
 
     const unknownCommand = (inputCmd) => {
@@ -250,6 +255,13 @@ function Terminal() {
         inputRef.current && inputRef.current.focus();
     };
 
+    useEffect(() => {
+        // Add the banner to the terminal history on mount
+        setTerminalHistory([
+            { command: "", output: generateBanner(), component: null },
+        ]);
+    }, []);
+
     // Click listener for focusing on the input field
     useEffect(() => {
         document.addEventListener("click", handleDivClick);
@@ -265,8 +277,6 @@ function Terminal() {
     return (
         <div className="terminal-container">
             <div className="terminal-content">
-                {generateBanner()}
-
                 {/* Iterate through the terminal history array and render the objects */}
                 {terminalHistory.map((entry, index) => (
                     <div key={index} className="terminal-line">
