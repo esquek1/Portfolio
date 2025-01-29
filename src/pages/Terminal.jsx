@@ -7,11 +7,11 @@ import Jokes from "../components/Joke";
 import { BsCapslockFill } from "react-icons/bs";
 
 const COMMANDS = [
-    { cmd: "-about", desc: "About Me", component: <About /> },
+    { cmd: "-about", desc: "About me", component: <About /> },
     { cmd: "-clear", desc: "Clear the terminal", component: null },
     {
         cmd: "-contact",
-        desc: "My Contact Information",
+        desc: "My contact information",
         component: <Contact />,
     },
     { cmd: "-help", desc: "Show available commands", component: null },
