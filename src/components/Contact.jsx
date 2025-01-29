@@ -6,7 +6,7 @@ function Contact() {
             <div className="contact-content">
                 <a
                     className="contact-links"
-                    href="https://github.com/esquek1"
+                    href="https://github.com/Kelly-Esquejo"
                     rel="noopener noreferrer">
                     GitHub
                 </a>
