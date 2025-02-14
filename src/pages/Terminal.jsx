@@ -36,7 +36,8 @@ const XSSATTACKS = [
     "&#x3C;script&#x3E;alert('XSS')&#x3C;/script&#x3E;",
     "<<script>alert('XSS');//<</script>",
 ];
-
+// https://www.asciiart.eu/text-to-ascii-art
+// Block - DOS Rebel
 const NameBanner = () => {
     return ` █████   ████          ████  ████                ██████████                                         ███          
 ░░███   ███░          ░░███ ░░███               ░░███░░░░░█                                        ░░░           
