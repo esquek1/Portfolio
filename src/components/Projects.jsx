@@ -87,7 +87,28 @@ const rightWayArt = () => {
     //        /___/                         /___/  `;
 };
 
+const kellzLandArt = () => {
+    return ` █████               ████  ████                ████                           █████
+░░███               ░░███ ░░███               ░░███                          ░░███ 
+ ░███ █████  ██████  ░███  ░███   █████████    ░███   ██████   ████████    ███████ 
+ ░███░░███  ███░░███ ░███  ░███  ░█░░░░███     ░███  ░░░░░███ ░░███░░███  ███░░███ 
+ ░██████░  ░███████  ░███  ░███  ░   ███░      ░███   ███████  ░███ ░███ ░███ ░███ 
+ ░███░░███ ░███░░░   ░███  ░███    ███░   █    ░███  ███░░███  ░███ ░███ ░███ ░███ 
+ ████ █████░░██████  █████ █████  █████████ ██ █████░░████████ ████ █████░░████████
+░░░░ ░░░░░  ░░░░░░  ░░░░░ ░░░░░  ░░░░░░░░░ ░░ ░░░░░  ░░░░░░░░ ░░░░ ░░░░░  ░░░░░░░░ `;
+};
+
 const PROJECTS = [
+    {
+        title: kellzLandArt(),
+        skills: ["TypeScript", "Next.js15", "React", "Tailwind CSS"],
+        description: `A collection of fun and interactive web activities, showcasing my
+        personal interests. Integrated Google Drive API and Joke v2 API to dynamically
+        display images of cars for users to guess and Joke v2 generate random jokes. `,
+        features: null,
+        link: "https://kelly-esquejo.github.io/kellz.land/",
+        isPrivate: false,
+    },
     {
         title: cypherVaultArt(),
         skills: ["C++", "SQLite", "AES Encryption"],
