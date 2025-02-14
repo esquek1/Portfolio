@@ -4,7 +4,6 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import Projects from "../components/Projects";
 import Jokes from "../components/Joke";
-import { BsCapslockFill } from "react-icons/bs";
 
 const COMMANDS = [
     { cmd: "-about", desc: "About Me", component: <About /> },
